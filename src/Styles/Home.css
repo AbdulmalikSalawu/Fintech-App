@@ -1,6 +1,8 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 h1{
     color: #0c1825;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 5rem;
 }
 .createAcct{
@@ -10,17 +12,56 @@ h1{
     border-radius: 10.1px;
     color: white;
     font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+}
+.createAcct:hover{
+    background-color: blue;
+}
+.mission{
+    font-size: 1.4rem !important;
+}
+.recta{
+    height: 37rem;
+    width: 21rem;
+}
+.lady{
+    position: relative;
+    top: -38rem;
+    right: 5rem;
+    height: 32rem;
+    width: 23rem;
+}
+@media screen and (max-width:600px) {
+    *{
+    overflow-x: hidden !important;
+    }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:999px) {
+    .col-md-10{
+        text-align: center !important;
+    }
+    .iphone{
+        position: relative;
+        right: 3.3rem;
+    }
     h1,p,.createAcct{
         position: relative;
-        right: 3rem;
+        right: 3.5rem;
     }
-    h1{font-size: 3rem;}
-    p{
-        font-size: 2rem;
+    h1{font-size: 2.9rem;padding-right: 0.9rem;}
+    .mission{
         padding-right: 1.6rem;
     }
+    .d-lg-none{
+        position: relative;
+        left: 5rem;
+    }
+    .recta{
+        width: 19rem;
+    }
+    .lady{
+        width:22rem;
+    }
 }
+

@@ -35,7 +35,7 @@ function Nav() {
                 <NavLink onClick={showNavbar}>FAQs</NavLink>
                 <NavLink onClick={showNavbar}>Resources</NavLink>
                 <NavLink className='signinbtn'>Sign in</NavLink>
-                <button className='signupbtn'><NavLink className='text-white fw-normal'>Create Free Account</NavLink></button>
+                <button className='signupbtn'><NavLink className='text-white'>Create Free Account</NavLink></button>
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes onClick={toggle2} />
                 </button>
