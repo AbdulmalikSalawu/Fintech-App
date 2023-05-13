@@ -20,24 +20,26 @@ h1{
 .mission{
     font-size: 1.4rem !important;
 }
-.recta{
-    height: 37rem;
-    width: 21rem;
-}
 .lady{
-    position: relative;
-    top: -38rem;
-    right: 5rem;
-    height: 32rem;
-    width: 23rem;
+    height: 38rem;
+    width: 32rem;
+}
+.apple{
+    height: 1.5rem;
+    width: 1.6rem;
 }
 @media screen and (max-width:600px) {
     *{
     overflow-x: hidden !important;
     }
+    .lady{
+        width:89% !important;
+        display: block;
+        margin: auto !important;
+    }
 }
 
-@media screen and (max-width:999px) {
+@media screen and (max-width:1050px) {
     .col-md-10{
         text-align: center !important;
     }
@@ -56,12 +58,6 @@ h1{
     .d-lg-none{
         position: relative;
         left: 5rem;
-    }
-    .recta{
-        width: 19rem;
-    }
-    .lady{
-        width:22rem;
     }
 }
 

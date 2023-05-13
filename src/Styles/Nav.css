@@ -57,6 +57,10 @@ img{
     margin-left: 5rem;
     width: 10rem;
 }
+.col-lg-7{
+    display: block;
+    margin: auto;
+}
 
 @media screen and (max-width: 880px) {
     
@@ -93,8 +97,8 @@ img{
     }
     nav .nav-close-btn{
         position: absolute;
-        top: 2rem;
-        right: 2rem;
+        top: 0.7rem;
+        right: 1.5rem;
     }
     img{
         margin: 0.7rem 0 0 2rem;

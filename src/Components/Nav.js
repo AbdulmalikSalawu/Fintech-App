@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef,useState} from 'react'
 import { FaBars, FaTimes} from 'react-icons/fa';
 import logo from '../Assets/piggyIcon.svg';
 // import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,7 @@ import {setShow, removeShow} from '../Features/navSlice'
 // import {useDispatch} from 'react-redux'
 
 function Nav() {
+    const [openNav,setOpenNav] = useState(true)
     const navRef = useRef();
     // const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -19,14 +20,16 @@ function Nav() {
 
     const toggle = () => {
         dispatch(removeShow())
+        setOpenNav(false)
     }
     const toggle2 = () => {
         dispatch(setShow())
+        setOpenNav(true)
     }
 
   return (
     <div>
-        <header>
+        <header className='mt-1 sticky-top'>
             <h4 className='ms- mt-2'><img src={logo} alt="svg image"/></h4>
             <nav ref={navRef} className='pb-2'>
                 <NavLink className='save' onClick={showNavbar} to ='/'>Save</NavLink>
@@ -40,9 +43,10 @@ function Nav() {
                     <FaTimes onClick={toggle2} />
                 </button>
             </nav>
-            <button className='nav-btn nav-open-btn' onClick={showNavbar}>
+            {openNav? (<button className='nav-btn nav-open-btn' onClick={showNavbar}>
                 <FaBars onClick={toggle} />
-            </button>
+            </button>) : ""}
+            
         </header>
     </div>
   )
