@@ -29,7 +29,7 @@ function Nav() {
 
   return (
     <div>
-        <header className='mt-1 sticky-top'>
+        <header className='sticky-top shadow-sm'>
             <h4 className='ms- mt-2'><img src={logo} alt="svg image"/></h4>
             <nav ref={navRef} className='pb-2'>
                 <NavLink className='save' onClick={showNavbar} to ='/'>Save</NavLink>

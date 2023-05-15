@@ -10,15 +10,16 @@ header{
     align-items: center;
     justify-content: space-between;
     height: 69px;
-    background-color: var(--mainColorLight) !important;
     overflow: hidden !important;
     position: fixed !important;
     z-index: 1;
     width: 100%;
     color: var(--textColor);
+    background-color: white;
 }
 nav{
     padding-top: 0rem;
+    overflow: hidden;
 }
 nav a{
     margin: 0 1rem;
