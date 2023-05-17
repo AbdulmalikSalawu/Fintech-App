@@ -5,6 +5,9 @@ import croppedLady from '../Assets/goodsnip.PNG'
 import apple from '../Assets/apple-icon.svg'
 import android from '../Assets/googleplay.svg'
 import shield from '../Assets/sheld.png'
+import smallShield from '../Assets/smallShield.png'
+import safeLock from '../Assets/safeLock.png'
+import mobile from '../Assets/mobile.png'
 import { Link } from 'react-router-dom'
 
 function Home() {
@@ -41,25 +44,62 @@ function Home() {
                 <div class="card-body">
                     <p className="fs-1 fw-bold fourways">4 ways to build your savings</p>
                     <p className='fs-5'>Earn 5%-15% when you save with any of these PiggyVest plans.</p>
-                    <button className='start fs-5'>Start saving</button>
+                    <button className='start fs-5 mt-4'>Start saving</button>
                 </div>
             </div>
-            <div class="card col-md-4 col-lg-3 ms-md-2 ms-lg-3 pt-3 bg-light border-0">
-              {/* <img class="card-img-top" src={card2} alt="Card image cap" /> */}
-          <div class="card-body">
-            <h4 class="card-title text-center fw-bold">Automated Savings</h4>
-            <p class="card-text text-center mt-4">Build a dedicated savings faster on your terms automatically or manua</p>
+            <div class="card col-lg-3 ms-lg-3 pt-3 pb-3 bg-light border-0">
+              <img class="card-img-top mb-4" src={smallShield} alt="Card image cap" />
+              <div class="card-body">
+            <h4 class="card-title fw-bold">Automated Savings</h4>
+            <p class="card-text mt-4 fs-5">Build a dedicated savings faster on your terms automatically or manual</p>
                     <Link to='/' className='mt-5 ms-lg-5 text-decoration-none feature'>Piggy Bank</Link>
-                </div>
+              </div>
             </div>
-            <div class="card col-md-4 col-lg-3 ms-md-2 ms-lg-3 pt-3 bg-light border-0">
-                {/* <img class="card-img-top" src={card3} alt="Card image cap" /> */}
+            <div class="card col-lg-3 ms-lg-3 pt-3 bg-light border-0">
+                <img class="card-img-top mb-4" src={safeLock} alt="Card image cap" />
                 <div class="card-body">
-                    <h4 class="card-title text-center fw-bold">100% quality</h4>
-                    <p class="card-text text-center">We provide quality food for you and your loved ones for health.</p>
+                    <h4 class="card-title fw-bold">100% quality</h4>
+                    <p class="card-text mt-4 fs-5">We provide quality food for you and your loved ones for health.</p>
                     <Link to='/' className='mt-5 ms-lg-5 text-decoration-none feature'>Piggy Bank</Link>
                         </div>
                     </div>
+                </div>
+            </div>
+
+        <div className='row mt-5 pt-3 mb-5'>
+          <div className='cardcontainer mt-5'>
+          <div class="card col-lg-3 border-0 fff">
+              <div class="card-body">
+              </div>
+          </div>
+          <div class="card col-lg-3 ms-lg-3 pt-3 pb-3 bg-light border-0">
+              <img class="card-img-top mb-4" src={smallShield} alt="Card image cap" />
+            <div class="card-body">
+          <h4 class="card-title fw-bold">Goal-oriented Savings</h4>
+          <p class="card-text mt-4 fs-5">Build a dedicated savings faster on your terms automatically or manual</p>
+                  <Link to='/' className='mt-5 ms-lg-5 text-decoration-none feature'>Target Savings</Link>
+              </div>
+            </div>
+            <div class="card col-lg-3 ms-lg-3 pt-3 bg-light border-0">
+                <img class="card-img-top mb-4" src={safeLock} alt="Card image cap" />
+                <div class="card-body">
+                    <h4 class="card-title fw-bold">Flexible savings</h4>
+                    <p class="card-text mt-4 fs-5">We provide quality food for you and your loved ones for health.</p>
+                    <Link to='/' className='mt-5 ms-lg-5 text-decoration-none feature'>Flex Naira</Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className='row ps-lg-5 mt-5 pt-5 mb-5'>
+                <div className='col-lg-4 ms-4 ps-5'>
+                    <img src={mobile} alt='mobile' className='mobilee' />
+                </div>
+                <div className='col-lg-6 pe-5 ms-lg-4'>
+                  <button className='mt-5 rounded-pill border-0 px-3 py-1 fs-5'>Up to 25% returns</button>
+                  <h1 className='access mt-4'>Access investment opportunities</h1>
+                  <p className='mt-4 fs-5 text-center text-lg-start'>Invest securely and confidently on the go. Grow your money confidently by investing in pre-vetted investment opportunities.</p>
+                  <Link to='/' className='text-decoration-none learnMore mt-5 fs-5'>Learn more about investments</Link>
                 </div>
             </div>
 

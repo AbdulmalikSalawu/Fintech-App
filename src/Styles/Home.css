@@ -44,11 +44,24 @@ h1{
     color: white;
 }
 .start:hover{background-color: blue;}
-.card{border-radius: 15px;}
+.card{border-radius: 20px;min-height: 21rem !important;}
 .feature{
     position: relative;
-    top: 8rem;
+    top: 2rem;
+    right: 3rem;
 }
+.card-img-top{
+    width: 3rem;
+    position: relative;
+    right: 3.5rem;
+}
+.mobilee{
+    width: 16rem;
+    height: 34rem;
+}
+.access{font-size: 3.5rem;font-weight: bold;}
+.rounded-pill{color: purple; background-color: rgb(238, 224, 238);}
+.learnMore{color: purple}
 
 @media screen and (max-width:600px) {
     *{
@@ -62,13 +75,18 @@ h1{
     }
     .card{
         margin-bottom: 3rem;
-        width: 96% !important;
+        width: 90% !important;
         margin: auto;
         margin-bottom: 2rem;
-        text-align: center;
-        min-height: 15rem !important;
+        min-height: 21rem !important;
     }
-    .feature{top: 3rem;}
+    .feature{top: 3rem;left: 0.5rem !important;}
+    .apple{position: relative;bottom: 7px;}
+    .card-img-top,.feature{position: relative;left: -1rem;}
+    .fff{display: none;}
+    .mobilee{margin: auto;}
+    .rounded-pill{display: block; margin: auto;}
+    .access{font-size: 2rem; text-align: center;left: 1rem;}
 }
 
 @media screen and (max-width:1050px) {

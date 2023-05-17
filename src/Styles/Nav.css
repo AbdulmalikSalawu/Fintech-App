@@ -17,6 +17,19 @@ header{
     color: var(--textColor);
     background-color: white;
 }
+.bg-white{
+    position: fixed;
+    top: 4.8rem;
+    height: 6rem !important;
+    width: 20rem !important;
+    border-radius: 12px;
+    padding: 1rem;
+    left: 18rem;
+}
+small{
+    position: relative;
+    bottom: 1.5rem;
+}
 nav{
     padding-top: 0rem;
     overflow: hidden;
@@ -25,7 +38,6 @@ nav a{
     margin: 0 1rem;
     font-size: 1rem;
     font-weight: bold;
-    /* font-family: "Space Grotesk", sans-serif !important; */
     color: #0c1825;
     text-decoration: none;
 }
@@ -61,6 +73,12 @@ img{
 .col-lg-7{
     display: block;
     margin: auto;
+}
+.apple{
+    width: 1rem;
+}
+.menuIcons{
+    display: flex;
 }
 
 @media screen and (max-width: 880px) {

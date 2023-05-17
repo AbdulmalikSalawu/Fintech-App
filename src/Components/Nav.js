@@ -6,10 +6,16 @@ import { NavLink } from 'react-router-dom';
 import '../Styles/Nav.css'
 import {useDispatch} from 'react-redux'
 import {setShow, removeShow} from '../Features/navSlice'
+import apple from '../Assets/apple-icon.svg'
+import flexNaira from '../Assets/flexNaira.png'
+import safeLock from '../Assets/safeLock.png'
+import smallShield from '../Assets/smallShield.png'
+import targetSaving from '../Assets/targetSavings.png'
 // import {useDispatch} from 'react-redux'
 
 function Nav() {
     const [openNav,setOpenNav] = useState(true)
+    const [showMenu,setShowMenu] = useState(false)
     const navRef = useRef();
     // const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -26,13 +32,19 @@ function Nav() {
         dispatch(setShow())
         setOpenNav(true)
     }
+    const displayMenu = () => {
+        setShowMenu(true)
+    }
+    const hideMenu = () => {
+        setShowMenu(false)
+    }
 
   return (
     <div>
-        <header className='sticky-top shadow-sm'>
+        <header className='sticky-top shadow-sm py-'>
             <h4 className='ms- mt-2'><img src={logo} alt="svg image"/></h4>
             <nav ref={navRef} className='pb-2'>
-                <NavLink className='save' onClick={showNavbar} to ='/'>Save</NavLink>
+                <NavLink className='save' onClick={showNavbar} onMouseOver={displayMenu} onMouseLeave={hideMenu} to ='/'>Save</NavLink>
                 <NavLink onClick={showNavbar}>Invest</NavLink>
                 <NavLink onClick={showNavbar}>Stories</NavLink>
                 <NavLink onClick={showNavbar}>FAQs</NavLink>
@@ -48,6 +60,19 @@ function Nav() {
             </button>) : ""}
             
         </header>
+        {showMenu? (
+            <div className='bg-white shadow'>
+                <div className='menuIcons'>
+                    <span><img src={smallShield} className='apple' alt='piggy'/><small>Piggybank</small></span>
+                    <span><img src={safeLock} className='apple' alt='piggy'/><small>Safelock</small></span>
+                </div>
+                <div className='menuIcons'>
+                    <span><img src={targetSaving} className='apple' alt='piggy'/><small>Target</small></span>
+                    <span><img src={flexNaira} className='apple' alt='piggy'/><small>Flexnaira</small></span>
+                </div>
+            </div>
+        ) : ""}
+
     </div>
   )
 }
