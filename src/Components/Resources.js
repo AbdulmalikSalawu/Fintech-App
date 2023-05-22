@@ -2,8 +2,8 @@ import React from 'react'
 
 function Resources() {
   return (
-    <div>
-fdfd
+    <div className='pt-5'>
+      <h2>dfddfdfdfdfd</h2>
     </div>
   )
 }

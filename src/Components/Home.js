@@ -9,6 +9,11 @@ import smallShield from '../Assets/smallShield.png'
 import safeLock from '../Assets/safeLock.png'
 import mobile from '../Assets/mobile.png'
 import happyMan from '../Assets/happyMan.PNG'
+import techcrunch from '../Assets/techcrunch.png'
+import techpoint from '../Assets/techpoint.png'
+import theguard from '../Assets/theguardian.png'
+import logo from '../Assets/piggyIcon.svg';
+import ndpr from '../Assets/ndprAudit.png'
 import { Link } from 'react-router-dom'
 
 function Home() {
@@ -59,7 +64,7 @@ function Home() {
             <div class="card col-lg-3 ms-lg-3 pt-3 bg-light border-0">
                 <img class="card-img-top mb-4" src={safeLock} alt="Card image cap" />
                 <div class="card-body">
-                    <h4 class="card-title fw-bold">100% quality</h4>
+                    <h4 class="card-title fw-bold">Fixed Savings/h4>
                     <p class="card-text mt-4 fs-5">We provide quality food for you and your loved ones for health.</p>
                     <Link to='/' className='mt-5 ms-lg-5 text-decoration-none feature'>Safelock</Link>
                         </div>
@@ -127,12 +132,43 @@ function Home() {
 
             <div class="card col-lg-7 border-0">
                 <div class="card-body ms-lg-5 ps-lg-5 text-center text-lg-start">
-                    <p className="fs-2 fw-bold fourways">4 Million + customers</p>
-                    <p className='fs-5 col-lg-9'>Since launching in 2016, over 4,000,000 people have used PiggyVest to manage their money better, avoid over-spending and be more accountable..</p>
-                    <button className='start fs-5 mt-4'>Create free account</button>
+                  <p className="fs-2 fw-bold fourways">4 Million + customers</p>
+                  <p className='fs-5 col-lg-9'>Since launching in 2016, over 4,000,000 people have used PiggyVest to manage their money better, avoid over-spending and be more accountable..</p>
+                  <button className='start fs-5 mt-4'>Create free account</button><br />
+                  <div className='btnDuo mt-3'>
+                    <button className='mt-4 btn btn-white border border-secondary px-3 py-2 iphone2'><img src={apple} className='apple ms-0' alt='apple' />Get on iPhone</button>
+                    <button className='ms-2 mt-4 btn btn-white border border-secondary px-3 py-2 iphone2'><img src={android} className='apple ms-0' alt='apple' />Get on Android</button>
+                  </div>
                 </div>
-            </div>           
+              </div>           
             </div>
+          </div>
+
+          <div className='row featuredIn mt-5 mb-5 pt-5 pb-5 ps-lg-5 bg-light'>
+              <div className='col-md-6 col-lg-3 fs-2 ms-3 ms-lg-5 fw-bold mt-4'>As featured in</div>
+              <div className='col-md-6 col-lg-2 mt-4'><img src={techpoint} alt='crunch' /></div>
+              <div className='col-md-6 col-lg-2 mt-4'><img src={theguard} alt='crunch' /></div>
+              <div className='col-md-6 col-lg-2 mt-4'><img src={techcrunch} alt='crunch' /></div>
+          </div>
+
+          <div class='row'>
+              <div class='col-lg-2 ms-5'>
+                <img src={logo} class='w-100' />
+                <img src={ndpr} class='w-50 mt-4 border border-secondary ndpr' />
+              </div>
+              <div class='col-lg-3 ms-5 text-start text-lg-center'>
+                <ul class=''>
+                  <li class='fw-bold mt-5 mt-lg-0'>Product</li>
+                  <li class='mt-2'>Piggybank</li>
+                  <li class='mt-1'>Invest</li>
+                  <li class='mt-1'>Safelock</li>
+                  <li class='mt-1'>Target savings</li>
+                  <li class='mt-1'>Flexnaira</li>
+                </ul> 
+              </div>
+              <div class='col-lg-2'></div>
+              <div class='col-lg-2'></div>
+              <div class='col-lg-2'></div>
           </div>
 
           </div>

@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Login() {
+function Nomatch() {
   return (
     <div>
-        Login page
+      Error 404!
     </div>
   )
 }
 
-export default Login
+export default Nomatch

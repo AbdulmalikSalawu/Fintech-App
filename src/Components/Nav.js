@@ -45,10 +45,10 @@ function Nav() {
             <h4 className='ms- mt-2'><img src={logo} alt="svg image"/></h4>
             <nav ref={navRef} className='pb-2'>
                 <NavLink className='save' onClick={showNavbar} onMouseOver={displayMenu} onMouseLeave={hideMenu} to ='/'>Save</NavLink>
-                <NavLink onClick={showNavbar}>Invest</NavLink>
-                <NavLink onClick={showNavbar}>Stories</NavLink>
-                <NavLink onClick={showNavbar}>FAQs</NavLink>
-                <NavLink onClick={showNavbar}>Resources</NavLink>
+                <NavLink to='invest' onClick={showNavbar}>Invest</NavLink>
+                <NavLink to='stories' onClick={showNavbar}>Stories</NavLink>
+                <NavLink to='faqs' onClick={showNavbar}>FAQs</NavLink>
+                <NavLink to='/resources' onClick={showNavbar}>Resources</NavLink>
                 <NavLink className='signinbtn'>Sign in</NavLink>
                 <button className='signupbtn'><NavLink className='text-white'>Create Free Account</NavLink></button>
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>
