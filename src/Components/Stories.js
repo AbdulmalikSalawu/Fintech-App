@@ -1,9 +1,10 @@
 import React from 'react'
+import Footer from './Footer'
 
 function Stories() {
   return (
     <div>
-        dfdfdf
+        <Footer />
     </div>
   )
 }

@@ -7,18 +7,20 @@ import android from '../Assets/googleplay.svg'
 import shield from '../Assets/sheld.png'
 import smallShield from '../Assets/smallShield.png'
 import safeLock from '../Assets/safeLock.png'
+import flexNaira from '../Assets/flexNaira.png'
+import targetSaving from '../Assets/targetSavings.png'
 import mobile from '../Assets/mobile.png'
 import happyMan from '../Assets/happyMan.PNG'
 import techcrunch from '../Assets/techcrunch.png'
 import techpoint from '../Assets/techpoint.png'
 import theguard from '../Assets/theguardian.png'
-import logo from '../Assets/piggyIcon.svg';
-import ndpr from '../Assets/ndprAudit.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import Footer from './Footer'
 
 function Home() {
 
   const showNav = useSelector((state) => state.navbar.show)
+  const navigate = useNavigate()
 
   return (
     <div>
@@ -28,9 +30,9 @@ function Home() {
               <div className='col-sm-12 col-md-10 col-lg-6 mt-5 ms-5 pt-4'>
                 <h1 className='mt-5 ms-5 bigHeading'>The Better Way to Save and Invest</h1>
                 <p className='pe-lg-5 ms-5 fs-5 mission'>Piggy Vest helps over 4 million customers achieve their financial goals by helping them save and invest with ease.</p>
-                <button className='createAcct ms-lg-5 mt-3'>Create free account</button><br/>
-                <button className='mt-5 btn btn-white border border-secondary ms-lg-5 px-3 py-2 iphone'><img src={apple} className='apple ms-0' alt='apple' />Get on iPhone</button>
-                <button className='ms-2 mt-5 btn btn-white border border-secondary px-3 py-2 iphone'><img src={android} className='apple ms-0' alt='apple' />Get on Android</button>
+                <button onClick={() => navigate('/signup')} className='createAcct ms-lg-5 mt-3'>Create free account</button><br/>
+                <button className='mt-5 btn btn-white border border-secondary ms-lg-5 px-3 py-2 iphone'><img src={apple} className='apple ms-0' alt='apple' /><Link class='text-dark text-decoration-none' target='_blank' to='https://apps.apple.com/ng/app/piggyvest/id1263117994'>Get on iPhone</Link></button>
+                <button className='ms-2 mt-5 btn btn-white border border-secondary px-3 py-2 iphone'><img src={android} className='apple ms-0' alt='apple' /><Link class='text-dark text-decoration-none' to='https://play.google.com/store/apps/details?id=com.piggybankng.piggy'>Get on Android</Link></button>
               </div>
               <div className='col-lg-5 ps-lg-5 pt-5 me-3'>
                   <img src={croppedLady} className='lady mt-5 ms-lg-2' alt='happy lady' />
@@ -50,7 +52,7 @@ function Home() {
                 <div class="card-body">
                     <p className="fs-1 fw-bold fourways">4 ways to build your savings</p>
                     <p className='fs-5'>Earn 5%-15% when you save with any of these PiggyVest plans.</p>
-                    <button className='start fs-5 mt-4'>Start saving</button>
+                    <button className='start fs-5 mt-4'><Link class='text-white text-decoration-none' to='signup'>Start Saving</Link></button>
                 </div>
             </div>
             <div class="card col-lg-3 ms-lg-3 pt-3 pb-3 bg-light border-0">
@@ -64,8 +66,8 @@ function Home() {
             <div class="card col-lg-3 ms-lg-3 pt-3 bg-light border-0">
                 <img class="card-img-top mb-4" src={safeLock} alt="Card image cap" />
                 <div class="card-body">
-                    <h4 class="card-title fw-bold">Fixed Savings/h4>
-                    <p class="card-text mt-4 fs-5">We provide quality food for you and your loved ones for health.</p>
+                    <h4 class="card-title fw-bold">Fixed Savings</h4>
+                    <p class="card-text mt-4 fs-5">Lock money away for a fixed duration with no access to it until maturity. It's like having a a custom fixed deposit.</p>
                     <Link to='/' className='mt-5 ms-lg-5 text-decoration-none feature'>Safelock</Link>
                         </div>
                     </div>
@@ -79,7 +81,7 @@ function Home() {
               </div>
           </div>
           <div class="card col-lg-3 ms-lg-3 pt-3 pb-3 bg-light border-0">
-              <img class="card-img-top mb-4" src={smallShield} alt="Card image cap" />
+              <img class="card-img-top mb-4" src={targetSaving} alt="Card image cap" />
             <div class="card-body">
           <h4 class="card-title fw-bold">Goal-oriented Savings</h4>
           <p class="card-text mt-4 fs-5">Build a dedicated savings faster on your terms automatically or manual</p>
@@ -87,7 +89,7 @@ function Home() {
               </div>
             </div>
             <div class="card col-lg-3 ms-lg-3 pt-3 bg-light border-0">
-                <img class="card-img-top mb-4" src={safeLock} alt="Card image cap" />
+                <img class="card-img-top mb-4" src={flexNaira} alt="Card image cap" />
                 <div class="card-body">
                     <h4 class="card-title fw-bold">Flexible savings</h4>
                     <p class="card-text mt-4 fs-5">We provide quality food for you and your loved ones for health.</p>
@@ -151,26 +153,7 @@ function Home() {
               <div className='col-md-6 col-lg-2 mt-4'><img src={techcrunch} alt='crunch' /></div>
           </div>
 
-          <div class='row'>
-              <div class='col-lg-2 ms-5'>
-                <img src={logo} class='w-100' />
-                <img src={ndpr} class='w-50 mt-4 border border-secondary ndpr' />
-              </div>
-              <div class='col-lg-3 ms-5 text-start text-lg-center'>
-                <ul class=''>
-                  <li class='fw-bold mt-5 mt-lg-0'>Product</li>
-                  <li class='mt-2'>Piggybank</li>
-                  <li class='mt-1'>Invest</li>
-                  <li class='mt-1'>Safelock</li>
-                  <li class='mt-1'>Target savings</li>
-                  <li class='mt-1'>Flexnaira</li>
-                </ul> 
-              </div>
-              <div class='col-lg-2'></div>
-              <div class='col-lg-2'></div>
-              <div class='col-lg-2'></div>
-          </div>
-
+          <Footer />
           </div>
       ) : ""}
       

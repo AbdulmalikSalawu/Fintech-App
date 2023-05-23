@@ -2,7 +2,7 @@ import React, {useRef,useState} from 'react'
 import { FaBars, FaTimes} from 'react-icons/fa';
 import logo from '../Assets/piggyIcon.svg';
 // import { useNavigate } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../Styles/Nav.css'
 import {useDispatch} from 'react-redux'
 import {setShow, removeShow} from '../Features/navSlice'
@@ -17,7 +17,7 @@ function Nav() {
     const [openNav,setOpenNav] = useState(true)
     const [showMenu,setShowMenu] = useState(false)
     const navRef = useRef();
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const showNavbar = () => {
@@ -41,7 +41,7 @@ function Nav() {
 
   return (
     <div>
-        <header className='sticky-top shadow-sm py-'>
+        <header className='sticky-top    shadow-sm py-'>
             <h4 className='ms- mt-2'><img src={logo} alt="svg image"/></h4>
             <nav ref={navRef} className='pb-2'>
                 <NavLink className='save' onClick={showNavbar} onMouseOver={displayMenu} onMouseLeave={hideMenu} to ='/'>Save</NavLink>
@@ -49,8 +49,8 @@ function Nav() {
                 <NavLink to='stories' onClick={showNavbar}>Stories</NavLink>
                 <NavLink to='faqs' onClick={showNavbar}>FAQs</NavLink>
                 <NavLink to='/resources' onClick={showNavbar}>Resources</NavLink>
-                <NavLink className='signinbtn'>Sign in</NavLink>
-                <button className='signupbtn'><NavLink className='text-white'>Create Free Account</NavLink></button>
+                <NavLink to='login' className='signinbtn'>Sign in</NavLink> 
+                <button onClick={() => navigate('/signup')} className='signupbtn text-white px-4'>Create Free Account</button>
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes onClick={toggle2} />
                 </button>

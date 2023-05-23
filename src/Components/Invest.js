@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import Footer from './Footer'
+
 
 function Invest() {
     const url = "https://localhost:4500/"
@@ -10,8 +12,9 @@ function Invest() {
     })
 
   return (
-    <div>
-      
+    <div class='mt-5 ps-5'>
+        <div class='mt-5'></div>
+        <Footer />
     </div>
   )
 }

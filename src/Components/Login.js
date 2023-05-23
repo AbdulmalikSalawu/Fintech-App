@@ -3,7 +3,11 @@ import React from 'react'
 function Login() {
   return (
     <div>
-        Login page
+        <p>Login</p>
+        <p>Login</p>
+        <p>Login</p>
+        <p>Login</p>
+        <p>Login</p>
     </div>
   )
 }
