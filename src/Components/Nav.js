@@ -23,7 +23,11 @@ function Nav() {
     const showNavbar = () => {
         navRef.current.classList.toggle("responsive_nav")
     }
-
+     const navLinks = () => {
+        navRef.current.classList.toggle("responsive_nav")
+        dispatch(setShow())
+        setOpenNav(true)
+     }
     const toggle = () => {
         dispatch(removeShow())
         setOpenNav(false)
@@ -44,11 +48,11 @@ function Nav() {
         <header className='sticky-top    shadow-sm py-'>
             <h4 className='ms- mt-2'><img src={logo} alt="svg image"/></h4>
             <nav ref={navRef} className='pb-2'>
-                <NavLink className='save' onClick={showNavbar} onMouseOver={displayMenu} onMouseLeave={hideMenu} to ='/'>Save</NavLink>
-                <NavLink to='invest' onClick={showNavbar}>Invest</NavLink>
-                <NavLink to='stories' onClick={showNavbar}>Stories</NavLink>
-                <NavLink to='faqs' onClick={showNavbar}>FAQs</NavLink>
-                <NavLink to='/resources' onClick={showNavbar}>Resources</NavLink>
+                <NavLink className='save' onClick={navLinks} onMouseOver={displayMenu} onMouseLeave={hideMenu} to ='/'>Save</NavLink>
+                <NavLink to='invest' onClick={navLinks}>Invest</NavLink>
+                <NavLink to='stories' onClick={navLinks}>Stories</NavLink>
+                <NavLink to='faqs' onClick={navLinks}>FAQs</NavLink>
+                <NavLink to='/resources' onClick={navLinks}>Resources</NavLink>
                 <NavLink to='login' className='signinbtn'>Sign in</NavLink> 
                 <button onClick={() => navigate('/signup')} className='signupbtn text-white px-4'>Create Free Account</button>
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>

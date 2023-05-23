@@ -10,7 +10,7 @@ ul{
     list-style-type: none;
 }
 .createAcct{
-    background-color: #0c1825;
+    background-color: #0c1825 !important;
     padding: 12px 18px 12px 18px;
     border: none;
     border-radius: 10.1px;

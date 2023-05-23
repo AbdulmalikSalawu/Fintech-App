@@ -1,0 +1,35 @@
+.investPic{
+    height: 35rem ;
+    width: 28rem;
+}
+.bigHeading{
+    font-size: 4.2rem;
+}
+.startSaving{
+    background-color: purple;
+    padding: 12px 18px 12px 18px;
+    border: none;
+    border-radius: 10.1px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.mission{
+    font-size: 1rem !important;
+    line-height: 1.2rem;
+}
+
+@media screen and (max-width: 700px){
+    .bigHeading{
+        font-size: 2.6rem;
+        
+    }
+    .investPic{
+        width: 63%;
+        height: 30rem;
+        margin: auto !important;
+        margin-top: 3.2rem !important;
+    }
+    .startSaving{position: relative;
+        right: 3.75rem;}
+}
