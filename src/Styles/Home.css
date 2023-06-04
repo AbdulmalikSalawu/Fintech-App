@@ -19,10 +19,11 @@ ul{
     font-size: 1.2rem;
 }
 .createAcct:hover{
-    background-color: blue;
+    background-color: blue !important;
 }
 .mission{
     font-size: 1.4rem !important;
+    line-height: 2rem !important;
 }
 .lady{
     height: 38rem;
@@ -47,7 +48,7 @@ ul{
     color: white;
 }
 .start:hover{background-color: blue;}
-.card{border-radius: 20px;min-height: 21rem !important;}
+.card{border-radius: 25px;min-height: 21rem !important;}
 .feature{
     position: relative;
     top: 2rem;
@@ -74,7 +75,7 @@ ul{
     *{overflow-x: hidden !important;}
     .lady{
         width:99% !important;
-        height: 32rem;
+        height: 34rem;
         display: block;
         margin: auto !important;
     }
@@ -97,7 +98,7 @@ ul{
     .saver{font-size: 2.5rem !important;}
     .happyMan{width: 100%;margin: auto}
     .btnDuo{display: flex; justify-content: center;}
-    .iphone2{position: relative; left: 0rem; padding: 5px 10px 5px 10px !important;}
+    .iphone2{position: relative; left: 0rem; padding: 8px 7px 8px 7px !important;}
     .w-100{width: 40% !important;}
     .w-50{width: 20% !important; border-radius: 5px;}
     .ndpr{width: 5rem;}
@@ -133,4 +134,3 @@ ul{
     }
     .happyMan{height: 33rem; width: 35rem;}
 }
-

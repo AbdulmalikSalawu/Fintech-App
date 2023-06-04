@@ -11,9 +11,6 @@ import flexNaira from '../Assets/flexNaira.png'
 import targetSaving from '../Assets/targetSavings.png'
 import mobile from '../Assets/mobile.png'
 import happyMan from '../Assets/happyMan.PNG'
-import techcrunch from '../Assets/techcrunch.png'
-import techpoint from '../Assets/techpoint.png'
-import theguard from '../Assets/theguardian.png'
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from './Footer'
 
@@ -28,7 +25,7 @@ function Home() {
         <div>
           <div className='row pt-5 mb-5'>
               <div className='col-sm-12 col-md-10 col-lg-6 mt-5 ms-5 pt-4'>
-                <h1 className='mt-5 ms-5 bigHeading'>The Better Way to Save and Invest</h1>
+                <h1 className='mt-5 ms-5 bigHeading fw-bold'>The Better Way to Save and Invest</h1>
                 <p className='pe-lg-5 ms-5 fs-5 mission'>Piggy Vest helps over 4 million customers achieve their financial goals by helping them save and invest with ease.</p>
                 <button onClick={() => navigate('/signup')} className='createAcct ms-lg-5 mt-3'>Create free account</button><br/>
                 <button className='mt-5 btn btn-white border border-secondary ms-lg-5 px-3 py-2 iphone'><img src={apple} className='apple ms-0' alt='apple' /><Link class='text-dark text-decoration-none' target='_blank' to='https://apps.apple.com/ng/app/piggyvest/id1263117994'>Get on iPhone</Link></button>
@@ -144,13 +141,6 @@ function Home() {
                 </div>
               </div>           
             </div>
-          </div>
-
-          <div className='row featuredIn mt-5 mb-5 pt-5 pb-5 ps-lg-5 bg-light'>
-              <div className='col-md-6 col-lg-3 fs-2 ms-3 ms-lg-5 fw-bold mt-4'>As featured in</div>
-              <div className='col-md-6 col-lg-2 mt-4'><img src={techpoint} alt='crunch' /></div>
-              <div className='col-md-6 col-lg-2 mt-4'><img src={theguard} alt='crunch' /></div>
-              <div className='col-md-6 col-lg-2 mt-4'><img src={techcrunch} alt='crunch' /></div>
           </div>
 
           <Footer />
