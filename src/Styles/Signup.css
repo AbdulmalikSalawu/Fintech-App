@@ -11,7 +11,7 @@ input{
 .inputCont{
     background-color: white;
     border-radius: 1.5rem;
-    height: 80vh;
+    height: 83vh;
 }
 input{
     border: thin solid black !important;
@@ -23,9 +23,9 @@ h3{
     font-size: 2.5rem !important;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
     .inputCont{
         width: 95%; 
-        height: 70vh;
+        height: 74vh;
     }
 }
