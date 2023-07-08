@@ -15,8 +15,8 @@ function Footer() {
 
       <div className='row featuredIn mt-5 mb-5 pb-5 ps-lg-5 bg-light'>
         <div className='col-md-6 col-lg-3 fs-2 ms-3 ms-lg-5 fw-bold mt-4'>As featured in</div>
-        <div className='col-md-6 col-lg-2 mt-4'><img src={techpoint} alt='crunch' /></div>
-        <div className='col-md-6 col-lg-2 mt-4'><img src={theguard} alt='crunch' /></div>
+        <div className='col-md-6 col-lg-3 mt-4'><img src={techpoint} alt='crunch' /></div>
+        <div className='col-md-6 col-lg-3 mt-4'><img src={theguard} alt='crunch' /></div>
         <div className='col-md-6 col-lg-2 mt-4'><img src={techcrunch} alt='crunch' /></div>
           </div>
 

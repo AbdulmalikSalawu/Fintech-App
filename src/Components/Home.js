@@ -11,9 +11,10 @@ import flexNaira from '../Assets/flexNaira.png'
 import targetSaving from '../Assets/targetSavings.png'
 import mobile from '../Assets/mobile.png'
 import happyMan from '../Assets/happyMan.PNG'
+import testify from '../Assets/fallbackImg.PNG'
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from './Footer'
-import { loggedInUser } from '../Features/navSlice'
+import { navNeeded } from '../Features/navSlice'
 import Nav from './Nav'
 
 function Home() {
@@ -23,14 +24,14 @@ function Home() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(loggedInUser())
+    dispatch(navNeeded())
   }, []) 
 
   return (
     <div>
       {showNav ? (
         <div>
-          <Nav />
+          {/* <Nav /> */}
           <div className='row pt-5 mb-5'>
               <div className='col-sm-12 col-md-10 col-lg-6 mt-5 ms-5 pt-4'>
                 <h1 className='mt-5 ms-5 bigHeading fw-bold'>The Better Way to Save and Invest</h1>
@@ -130,6 +131,7 @@ function Home() {
           <div className='row mt-5 pt-3 mb-5'>
             <div className='cardcontainer mt-5 ps-lg-5'>
             <div class="card col-lg-5 ms-lg-5 pt-3 pb-3 bg-light border-0">
+              {/* <img src={testify} alt='testify' /> */}
               {/* <img class="card-img-top mb-4" src={smallShield} alt="Card image cap" /> */}
               <div class="card-body px-4 text-center text-lg-start">
                 <h6 class="card-title fw-bold">Balqeez J.</h6>

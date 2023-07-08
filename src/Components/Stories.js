@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Styles/Stories.css'
 import Footer from './Footer'
 import happyTeam from '../Assets/happyTeam2.PNG'
@@ -7,20 +7,25 @@ import juliana from '../Assets/juliana.jpeg'
 import apple from '../Assets/apple-icon.svg'
 import android from '../Assets/googleplay.svg'
 import smilingTeam from '../Assets/smilingTeam.png'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import Nav from './Nav'
+import { navNeeded } from '../Features/navSlice'
 
 function Stories() {
 
   const showNav = useSelector((state) => state.navbar.show)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(navNeeded())
+  }, []) 
 
   return (
     <div>
       {showNav ? (
         <div>
-          <Nav />
         <div>
           <div className='row pt-5 mb-5'>
               <div className='col-sm-12 col-md-10 col-lg-5 ps-5 ms-4 ms-lg-0 mt-5 pt-4'>

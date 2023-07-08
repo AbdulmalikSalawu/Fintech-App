@@ -13,10 +13,11 @@ import Dashboard from "./Components/Dashboard";
 import { useSelector } from "react-redux";
 
 function App() {
-  const isLoggedin = useSelector((state) => state.navbar.isLoggedin)
+  const isNavNeeded = useSelector((state) => state.navbar.isNavNeeded)
   return (
     <div className="App">
-      {isLoggedin===true ? (<Nav />) : ""}
+      {isNavNeeded===true ? <Nav /> : ""}
+      {/* <Nav /> */}
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/invest' element={<Invest />}></Route>

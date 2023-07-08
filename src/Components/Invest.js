@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import Footer from './Footer'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import investImg from '../Assets/invest.PNG'
 import smallShield from '../Assets/smallShield.png'
@@ -15,11 +15,17 @@ import apple from '../Assets/apple-icon.svg'
 import android from '../Assets/googleplay.svg'
 import '../Styles/Invest.css'
 import Nav from './Nav'
+import { navNeeded } from '../Features/navSlice'
 
 function Invest() {
     const url = "http://localhost:5000/testApi"
     const showNav = useSelector((state) => state.navbar.show)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+      dispatch(navNeeded())
+    }, []) 
 
     const callOnApi = ()=>{
       axios.get(url).then((res)=>{
@@ -39,7 +45,6 @@ function Invest() {
     <div class='mt-5'>
       {showNav ? (
         <div>
-          <Nav />
         <div class='mt-5 row'>
           <div className='col-md-10 col-lg-6 mt-3 mt-lg-5 ms-5 pt-lg-5'>
               <h1 class='mt-lg-5 pt-5 ms-5 bigHeading fw-bold'>Invest on the go.</h1>
@@ -137,7 +142,7 @@ function Invest() {
                 <div class="card-body ms-lg-5 ps-lg-5 text-center text-lg-start">
                   <p className="fs-2 fw-bold fourways">4 Million + customers</p>
                   <p className='fs-5 col-lg-9'>Since launching in 2016, over 4,000,000 people have used PiggyVest to manage their money better, avoid over-spending and be more accountable..</p>
-                  <button className='start fs-5 mt-4'>Create free account</button><br />
+                  <button onClick={()=>navigate("/signup")} className='start fs-5 mt-4'>Create free account</button><br />
                   <div className='btnDuo mt-3'>
                   <button className='mt-4 btn btn-white border border-secondary px-3 py-2 iphone2'><img src={apple} className='apple ms-0' alt='apple' />Get on iPhone</button>
                   <button className='ms-2 mt-4 btn btn-white border border-secondary px-3 py-2 iphone2'><img src={android} className='apple ms-0' alt='apple' />Get on Android</button>

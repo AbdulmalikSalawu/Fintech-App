@@ -6,12 +6,13 @@
     overflow-y: hidden !important;
 }
 input{
-    background-color: rgb(252, 251, 251) !important;
+    background-color: rgb(230, 227, 227) !important;
+    border: none !important;
 }
-.inputCont{
+.inputCon{
     background-color: white;
-    border-radius: 1.5rem;
-    height: 85vh;
+    border-radius: 1rem;
+    height: 68vh;
 }
 input{
     border: thin solid black !important;
@@ -19,14 +20,22 @@ input{
     width: 95% !important;
     font-size: 1.5rem;
 }
-h3{
+h5{
     font-size: 2.5rem !important;
-    color: rgb(31, 31, 160);
+    color: rgb(31, 31, 160)#0c1825;
+}
+.userLogin{
+    background-color: #0c1825;
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.7rem !important;
+}
+.userLogin:hover{
+    background-color: #030a12;
 }
 
 @media screen and (max-width: 600px) {
-    .inputCont{
+    .inputCon{
         width: 95%; 
-        height: 74vh;
+        height: 53vh;
     }
 }
