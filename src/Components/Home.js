@@ -1,5 +1,5 @@
-import React from 'react'
-import {useSelector} from 'react-redux'
+import React, { useEffect } from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import '../Styles/Home.css'
 import croppedLady from '../Assets/goodsnip.PNG'
 import apple from '../Assets/apple-icon.svg'
@@ -13,16 +13,24 @@ import mobile from '../Assets/mobile.png'
 import happyMan from '../Assets/happyMan.PNG'
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from './Footer'
+import { loggedInUser } from '../Features/navSlice'
+import Nav from './Nav'
 
 function Home() {
 
   const showNav = useSelector((state) => state.navbar.show)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(loggedInUser())
+  }, []) 
 
   return (
     <div>
       {showNav ? (
         <div>
+          <Nav />
           <div className='row pt-5 mb-5'>
               <div className='col-sm-12 col-md-10 col-lg-6 mt-5 ms-5 pt-4'>
                 <h1 className='mt-5 ms-5 bigHeading fw-bold'>The Better Way to Save and Invest</h1>

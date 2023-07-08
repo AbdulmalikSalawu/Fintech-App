@@ -14,6 +14,7 @@ import note3 from '../Assets/note3.jpg'
 import apple from '../Assets/apple-icon.svg'
 import android from '../Assets/googleplay.svg'
 import '../Styles/Invest.css'
+import Nav from './Nav'
 
 function Invest() {
     const url = "http://localhost:5000/testApi"
@@ -35,9 +36,10 @@ function Invest() {
     }
     
   return (
-
     <div class='mt-5'>
       {showNav ? (
+        <div>
+          <Nav />
         <div class='mt-5 row'>
           <div className='col-md-10 col-lg-6 mt-3 mt-lg-5 ms-5 pt-lg-5'>
               <h1 class='mt-lg-5 pt-5 ms-5 bigHeading fw-bold'>Invest on the go.</h1>
@@ -146,6 +148,7 @@ function Invest() {
           </div>
 
           <Footer />
+        </div>
         </div>
       ) : ""}
     </div>
