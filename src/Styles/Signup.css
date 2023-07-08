@@ -1,0 +1,24 @@
+.body{
+    background-image: url('../Assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow-y: hidden !important;
+}
+.inputCont{
+    background-color: white;
+}
+input{
+    border: thin solid black !important;
+    color: black;
+    width: 95% !important;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 800px) {
+    .inputCont{
+        width: 95%;
+        border-radius: 1.5rem;
+        height: 70vh;
+    }
+}

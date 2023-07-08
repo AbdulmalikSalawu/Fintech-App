@@ -9,11 +9,14 @@ import Resources from "./Components/Resources";
 import Nomatch from "./Components/Nomatch";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
+import Dashboard from "./Components/Dashboard";
+import { useSelector } from "react-redux";
 
 function App() {
+  const isLoggedin = useSelector((state) => state.navbar.isLoggedin)
   return (
     <div className="App">
-      <Nav />
+      {isLoggedin===true ? (<Nav />) : ""}
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/invest' element={<Invest />}></Route>
@@ -22,6 +25,7 @@ function App() {
         <Route path='/resources' element={<Resources />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/dashboard' element={<Dashboard />}></Route>
         <Route path='*' element={<Nomatch />}></Route>
       </Routes>
     </div>

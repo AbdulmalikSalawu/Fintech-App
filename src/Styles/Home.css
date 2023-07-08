@@ -1,6 +1,6 @@
 *{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* font-family: DM Sans,sans-serif !important */
+    overflow-x: hidden !important;
 }
 .bigHeading{
     color: #0c1825;
@@ -133,4 +133,15 @@ ul{
         justify-content: space-evenly;
     }
     .happyMan{height: 33rem; width: 35rem;}
+}
+@media screen and (max-width: 359px) {
+    .bigHeading{
+        font-size: 2.2rem !important;
+    }
+    .mobilee{
+        position: relative;
+        right: 2rem;
+        height: 30rem;
+        width: 14rem;
+    }
 }

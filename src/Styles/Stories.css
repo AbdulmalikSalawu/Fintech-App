@@ -1,11 +1,24 @@
 .happyTeam{
-    width: 35rem;
+    width: 38rem;
     height: 30rem;
+}
+.bigHeading{
+    font-size: 4rem;
+}
+.aim{
+    font-size: 1.4rem !important;
+    line-height: 2rem !important;
+}
+.fs-1{font-size: 3.2rem !important;}
+.card-img-top{
+    border-radius: 50%;
 }
 
 @media screen and (max-width: 800px){
     .happyTeam{
-        width: 85%;
-        height: 25rem;
+        width: 100%;
+        height: 30rem;
+        margin: auto;
     }
+    .bigHeading,.fs-1{font-size: 2.5rem !important;}
 }

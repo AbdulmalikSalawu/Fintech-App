@@ -146,7 +146,6 @@ function Invest() {
           </div>
 
           <Footer />
-          <button class='w-25 btn btn-secondary px-3 py-2 text-center text-black rounded-pill d-block m-auto' onClick={getApi}>GET</button>
         </div>
       ) : ""}
     </div>

@@ -66,7 +66,6 @@ function Footer() {
 
           <p className='w-75 w-lg-50 d-block m-auto text-center mt-2 mb-5'>Piggyvest (formerly piggybank.ng) is the leading online savings & investing platform in Nigeria. For over 6 years, our customers have saved and invested billions of Naira that they would normally be tempted to spend.</p>
           <p className='text-info fw-bold w-75 w-lg-50 d-block m-auto text-center mt-2 mb-5'>Designed by Malik, 2022.</p>
-
     </div>
   )
 }
