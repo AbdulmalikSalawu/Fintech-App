@@ -10,8 +10,9 @@ import safeLock from '../Assets/safeLock.png'
 import flexNaira from '../Assets/flexNaira.png'
 import targetSaving from '../Assets/targetSavings.png'
 import mobile from '../Assets/mobile.png'
+
 import happyMan from '../Assets/happyMan.PNG'
-import testify from '../Assets/fallbackImg.PNG'
+import testify from '../Assets/fallbackImg.png'
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from './Footer'
 import { navNeeded } from '../Features/navSlice'
@@ -131,12 +132,12 @@ function Home() {
           <div className='row mt-5 pt-3 mb-5'>
             <div className='cardcontainer mt-5 ps-lg-5'>
             <div class="card col-lg-5 ms-lg-5 pt-3 pb-3 bg-light border-0">
-              {/* <img src={testify} alt='testify' /> */}
+              <img class='testify' src={testify} alt='testify' />
               {/* <img class="card-img-top mb-4" src={smallShield} alt="Card image cap" /> */}
-              <div class="card-body px-4 text-center text-lg-start">
+              {/* <div class="card-body px-4 text-center text-lg-start">
                 <h6 class="card-title fw-bold">Balqeez J.</h6>
                 <p class="card-text mt-2">Thank you piggy vest for creating this platform for young entrepreneurs like me, this is my third year with Piggyvest. When I started saving with Piggyvest, I was just a 20 years old girl struggling as a beginner lash tech while in uni. Within these years I have been able to save over 5 million naira from my business. And every time I cash out my money I’ve been able to do tangible things with it. In 2021 I launched my branded lash tray from the money I saved with PiggyVest. I’ve been able to grow myself from 0-100. Recently I opened a beauty salon, all thanks to Piggyvest. I could go on and on 😫😫😫</p>
-              </div>
+              </div> */}
             </div>
 
             <div class="card col-lg-7 border-0">
