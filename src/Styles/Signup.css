@@ -23,6 +23,14 @@ h3{
     font-size: 2.5rem !important;
     color: rgb(31, 31, 160);
 }
+.error{
+    color: rgb(141, 5, 5);
+    font-weight: bold;
+    font-size: 1rem;
+}
+input.input-error,select.input-error{
+    border-color: rgb(141, 5, 5);
+}
 
 @media screen and (max-width: 600px) {
     .inputCont{
