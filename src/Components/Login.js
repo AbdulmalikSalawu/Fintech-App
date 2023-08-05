@@ -22,7 +22,7 @@ function Login() {
 
 
   const loginBtn = ()=> {
-    fetch("http://localhost:5000/login", {
+    fetch("https://abdulmalikyinka.onrender.com/login", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -75,7 +75,7 @@ function Login() {
             <input type="text" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-3 text-center py-2" value={values.password} onChange={handleChange} onBlur={handleBlur}/>
             {errors.password && touched.password && <p className='error text-center'>{errors.password}</p>}
 
-            <button className="btn d-block m-auto px-3 py-2 mt-5 w-75 text-white userLogin fs-5" onClick={loginBtn}>Login</button>
+            <button disabled={isSubmitting} className="btn d-block m-auto px-3 py-2 mt-5 w-75 text-white userLogin fs-5" onClick={loginBtn}>Login</button>
             <p class='text-center mt-1' onClick={()=> navigate('/signup')}>No account yet? Signup</p>
           </div>
         </div>

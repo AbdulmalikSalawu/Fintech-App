@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react"
+import {useFormik} from 'formik';
+import {signupSchema} from '../Schemas/schema';
 import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import '../Styles/Signup.css'
 import whiteLogo from '../Assets/whiteLogo.svg';
 import { navNotNeeded } from "../Features/navSlice";
 import { useNavigate } from "react-router";
-import {useFormik} from 'formik';
-import {basicSchema} from '../Schemas/schema';
 
 function Signup() {
-  const [firstname,setFirstname] = useState("")
-  const [lastname,setLastname] = useState("")
-  const [email,setEmail] = useState("")
-  const [password,setPassword] = useState("")
+  // const [firstname,setFirstname] = useState("")
+  // const [lastname,setLastname] = useState("")
+  // const [email,setEmail] = useState("")
+  // const [password,setPassword] = useState("")
   const [message,setMessage] = useState("")
   const showNav = useSelector((state) => state.navbar.show)
   const navigate = useNavigate()
@@ -21,33 +21,53 @@ function Signup() {
   useEffect(() => {
     dispatch(navNotNeeded())
   }, [])
-  
-  
 
-  const registerUser = ()=>{
-    const url = "http://localhost:5000/signup"
-    axios.post(url,{firstname,lastname,email,password}).then((response)=>{
-        console.log(response.data)
-        setMessage(response.data.message)
-        if(response.data.message == "signup successful"){
-          window.location.href = "/login"
-        }
-    }).catch((error)=>{
-        console.log(error)
-    })
+  // const createAccount = ()=>{
+  //   console.log(firstname);
+  //   const url = "https://abdulmalikyinka.onrender.com/signup"
+  //   axios.post(url,{firstname,lastname,email,password}).then((response)=>{
+  //       console.log(response.data)
+  //       setMessage(response.data.message)
+  //   }).catch((error)=>{
+  //       console.log(error)
+  //   })
+  // }
+
+  const onSubmit = async (values, actions) => {
+    console.log(values);
+    const firstname = values.firstname;
+    const lastname = values.lastname;
+    const email = values.email;
+    const password = values.password;
+    // new Promise((resolve) => setTimeout(resolve, 1000))
+    const url = "https://abdulmalikyinka.onrender.com/signup"
+    try {
+      await axios.post(url,{firstname,lastname,email,password}).then((response)=>{
+          console.log(response.data)
+          setMessage(response.data.message)
+          if(response.data.message == "signup successful"){
+            window.location.href = "/login"
+          }
+          actions.resetForm();
+      }).catch((error)=>{
+          console.log(error)
+      }) }
+    catch(error){
+      console.log(error)
+    }
   }
 
-  const {values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit} = useFormik({
+  const {values, errors, touched, isSubmitting,  handleBlur, handleChange, handleSubmit} = 
+  useFormik({
     initialValues: {
-        username: "",
+        firstname: "",
         lastname: "",
         email: "",
-        phoneNumber: "",
         password: ""
     },
-    validationSchema: basicSchema,
-    registerUser,
-})
+    validationSchema: signupSchema,
+    onSubmit,
+  })
 
   return (
     <div className="pt-3 body">
@@ -57,24 +77,30 @@ function Signup() {
         <div class='inputCont col-md-8 col-lg-4 d-block m-auto'>
         <h5 class='text-center fw-bold mt-3 px-5 fs-2'>Create an account with us today</h5 >
 
-          <input type="text" placeholder="firstname" className="form-control w-75 d-block m-auto mt-5 text-center py-2" value={values.username}  onChange={handleChange} onBlur={handleBlur} name='username' />
+        {/* <input type="text" placeholder="firstname" name="firstname" className="form-control w-75 d-block m-auto mt-4 text-center" onChange={(e)=>(setFirstname(e.target.value))} />
+        <input type="text" placeholder="lastname" name="lastname" className="form-control w-75 d-block m-auto mt-3 text-center" onChange={(e)=>(setLastname(e.target.value))} />
+        <input type="text" placeholder="email" name="email" className="form-control w-75 d-block m-auto mt-3 text-center" onChange={(e)=>(setEmail(e.target.value))} />
+        <input type="password" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-3 text-center" onChange={(e)=>(setPassword(e.target.value))} />
+        <button type='submit' className="btn btn-info px-3 py-2 w-75 mt-5 fs-5 d-block m-auto border-0 userLogin text-white" onClick={createAccount}>Create Account</button> */}
+
+          <input type="text" name='firstname' placeholder="firstname" className="form-control w-75 d-block m-auto mt-5 text-center py-2" value={values.firstname} onChange={handleChange} onBlur={handleBlur} />
           {errors.username && touched.username && <p className='error text-center'>{errors.username}</p>}
 
           <input type="text" placeholder="lastname" name="lastname" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.lastname}  onChange={handleChange} onBlur={handleBlur} />
           {errors.lastname && touched.lastname && <p className='error text-center'>{errors.lastname}</p>}
 
           <input type="text" placeholder="email" name="email" value={values.email} className="form-control w-75 d-block m-auto mt-4 text-center py-2" onChange={handleChange} onBlur={handleBlur} />
-          {errors.email && touched.email && <p className='error text-center'>{errors.email}</p>}
+          {errors.email && touched.email && <p className='error text-center'>{errors.email}</p>} 
 
-          <input type="text" placeholder="phone-number" name="phoneNumber"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur}className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
-          {errors.phoneNumber && touched.phoneNumber && <p className='error text-center'>{errors.phoneNumber}</p>}
+          {/* <input type="text" placeholder="phone-number" name="phoneNumber"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur}className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
+          {errors.phoneNumber && touched.phoneNumber && <p className='error text-center'>{errors.phoneNumber}</p>} */}
 
           <input type="password" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.password} onChange={handleChange} onBlur={handleBlur} />
-          {errors.password && touched.password && <p className='error'>{errors.password}</p>}
+          {errors.password && touched.password && <p className='error text-center'>{errors.password}</p>}
           
-          <button className="btn btn-info px-3 py-2 w-75
-          mt-5 fs-5 d-block m-auto border-0 userLogin text-white" onClick={registerUser}>Create Account</button>
-            <p class='text-center' onClick={()=> navigate('/login')}>Already have an account? Login</p>
+          <button type='submit' disabled={isSubmitting} className="btn btn-info px-3 py-2 w-75 mt-5 fs-5 d-block m-auto border-0 userLogin text-white" onClick={handleSubmit}>Create Account</button>
+
+          <p class='text-center' onClick={()=> navigate('/login')}>Already have an account? Login</p>
          </div>
       </div>) : ""}
     </div>

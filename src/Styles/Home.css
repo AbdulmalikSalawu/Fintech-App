@@ -106,8 +106,6 @@ ul{
     .w-100{width: 40% !important;}
     .w-50{width: 20% !important; border-radius: 5px;}
     .ndpr{width: 5rem;}
-    
-    /* .listCont{display: flex; justify-content: space-evenly;} */
 }
 @media screen and (max-width:1050px) {
     .col-md-10{
@@ -149,3 +147,4 @@ ul{
         width: 14rem;
     }
 }
+@media screen and (max-width: 380px) {.testify{width: 90% !important;margin: auto;}}

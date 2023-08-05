@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 function Dashboard() {
 
   const [userData,setUserData] = useState("")
+  const showNav = useSelector((state) => state.navbar.show)
     
       //AXIOS method
         // const url = "http://localhost:5000/userData";
@@ -21,7 +23,7 @@ function Dashboard() {
 
       //FETCH method
       const getDetails = () => {
-        fetch("http://localhost:5000/userData", {
+        fetch("https://abdulmalikyinka.onrender.com/userData", {
           method: "POST",
           crossDomain: true,
           headers: {
@@ -50,11 +52,16 @@ function Dashboard() {
 
   return (
     <div class='mt-5 pt-5'>
-      <h2 class='text-center'>Welcome to your dashboard!</h2>
-        <h3>{userData.firstname}</h3>
-        {userData.email}
-          <button onClick={getDetails} className="btn btn-info px-3 py-2 d-block m-auto mb-3 mt-5">Get details</button>
-      <button onClick={logOut} class='btn btn-danger text-white px-3 py-2 mt-4 d-block m-auto'>Sign Out</button>
+      {showNav ? (
+        <div>
+          <h2 class='text-center'>Welcome to your dashboard!</h2>
+          <h3>{userData.firstname}</h3>
+          {userData.email}
+            <button onClick={getDetails} className="btn btn-info px-3 py-2 d-block m-auto mb-3 mt-5">Get details</button>
+          <button onClick={logOut} class='btn btn-danger text-white px-3 py-2 mt-4 d-block m-auto'>Sign Out</button>
+          </div>
+      ) : ""}
+      
     </div>
   )
 }

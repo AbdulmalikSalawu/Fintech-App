@@ -11,7 +11,7 @@ input{
 .inputCont{
     background-color: white;
     border-radius: 1.5rem;
-    height: 85vh;
+    min-height: 85vh;
 }
 input{
     border: thin solid black !important;
@@ -35,6 +35,6 @@ input.input-error,select.input-error{
 @media screen and (max-width: 600px) {
     .inputCont{
         width: 95%; 
-        height: 74vh;
+        min-height: 74vh;
     }
 }
