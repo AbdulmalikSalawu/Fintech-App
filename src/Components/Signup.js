@@ -62,6 +62,7 @@ function Signup() {
     initialValues: {
         firstname: "",
         lastname: "",
+        phoneNumber: "",
         email: "",
         password: ""
     },
@@ -75,7 +76,7 @@ function Signup() {
         <h4><img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/></h4>
         <h4 className="text-center text-success mt-4">{message}</h4>
         <div class='inputCont col-md-8 col-lg-4 d-block m-auto'>
-        <h5 class='text-center fw-bold mt-3 px-5 fs-2'>Create an account with us today</h5 >
+        <h5 class='text-center fw-bold mt-3 px-3 fs-2'>Create an account with us today</h5 >
 
         {/* <input type="text" placeholder="firstname" name="firstname" className="form-control w-75 d-block m-auto mt-4 text-center" onChange={(e)=>(setFirstname(e.target.value))} />
         <input type="text" placeholder="lastname" name="lastname" className="form-control w-75 d-block m-auto mt-3 text-center" onChange={(e)=>(setLastname(e.target.value))} />
@@ -83,7 +84,7 @@ function Signup() {
         <input type="password" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-3 text-center" onChange={(e)=>(setPassword(e.target.value))} />
         <button type='submit' className="btn btn-info px-3 py-2 w-75 mt-5 fs-5 d-block m-auto border-0 userLogin text-white" onClick={createAccount}>Create Account</button> */}
 
-          <input type="text" name='firstname' placeholder="firstname" className="form-control w-75 d-block m-auto mt-5 text-center py-2" value={values.firstname} onChange={handleChange} onBlur={handleBlur} />
+          <input type="text" name='firstname' placeholder="firstname" className="form-control firstname w-75 d-block m-auto mt-5 text-center py-2" value={values.firstname} onChange={handleChange} onBlur={handleBlur} />
           {errors.username && touched.username && <p className='error text-center'>{errors.username}</p>}
 
           <input type="text" placeholder="lastname" name="lastname" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.lastname}  onChange={handleChange} onBlur={handleBlur} />
@@ -92,13 +93,13 @@ function Signup() {
           <input type="text" placeholder="email" name="email" value={values.email} className="form-control w-75 d-block m-auto mt-4 text-center py-2" onChange={handleChange} onBlur={handleBlur} />
           {errors.email && touched.email && <p className='error text-center'>{errors.email}</p>} 
 
-          {/* <input type="text" placeholder="phone-number" name="phoneNumber"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur}className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
-          {errors.phoneNumber && touched.phoneNumber && <p className='error text-center'>{errors.phoneNumber}</p>} */}
+          <input type="text" placeholder="phone-number" name="phoneNumber"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur}className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
+          {errors.phoneNumber && touched.phoneNumber && <p className='error text-center'>{errors.phoneNumber}</p>}
 
           <input type="password" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.password} onChange={handleChange} onBlur={handleBlur} />
           {errors.password && touched.password && <p className='error text-center'>{errors.password}</p>}
           
-          <button type='submit' disabled={isSubmitting} className="btn btn-info px-3 py-2 w-75 mt-5 fs-5 d-block m-auto border-0 userLogin text-white" onClick={handleSubmit}>Create Account</button>
+          <button type='submit' disabled={isSubmitting} className="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white" onClick={handleSubmit}>Create Account</button>
 
           <p class='text-center' onClick={()=> navigate('/login')}>Already have an account? Login</p>
          </div>

@@ -35,6 +35,19 @@ input.input-error,select.input-error{
 @media screen and (max-width: 600px) {
     .inputCont{
         width: 95%; 
-        min-height: 74vh;
+        min-height: 65vh;
+    }
+    .form-control{
+        border: none !important;
+        border-bottom: 2px solid black !important;
+        border-radius: 0.3rem;
+    }
+}
+@media screen and (max-width: 370px) {
+    .userLogin{
+        font-size: 1rem !important ;
+    }
+    .firstname{
+        margin-top: -0.8rem !important;
     }
 }
