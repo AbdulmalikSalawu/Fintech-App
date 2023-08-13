@@ -32,7 +32,7 @@ function Dashboard() {
             "Access-Control-Allow-Origin": "*",
           },
           body: JSON.stringify({
-            token:window.localStorage.getItem("token")
+            token:window.localStorage.getItem("token"),
           }),
         })
         .then((res)=>res.json())
@@ -41,7 +41,7 @@ function Dashboard() {
             setUserData(data.data)
           })
           .catch((error)=>{
-              console.log(error)
+            console.log(error)
           })
       }
 

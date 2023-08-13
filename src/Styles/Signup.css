@@ -41,6 +41,8 @@ input.input-error,select.input-error{
         border: none !important;
         border-bottom: 2px solid black !important;
         border-radius: 0.3rem;
+        background-color: rgb(248, 246, 246) !important;
+        width: 80% !important;
     }
 }
 @media screen and (max-width: 370px) {

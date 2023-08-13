@@ -37,12 +37,13 @@ function Signup() {
     console.log(values);
     const firstname = values.firstname;
     const lastname = values.lastname;
+    const phoneNumber = values.phoneNumber;
     const email = values.email;
     const password = values.password;
     // new Promise((resolve) => setTimeout(resolve, 1000))
     const url = "https://abdulmalikyinka.onrender.com/signup"
     try {
-      await axios.post(url,{firstname,lastname,email,password}).then((response)=>{
+      await axios.post(url,{firstname,lastname,phoneNumber,email,password}).then((response)=>{
           console.log(response.data)
           setMessage(response.data.message)
           if(response.data.message == "signup successful"){
@@ -74,7 +75,7 @@ function Signup() {
     <div className="pt-3 body">
       {showNav ? (<div>
         <h4><img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/></h4>
-        <h4 className="text-center text-success mt-4">{message}</h4>
+        <h4 className="text-center text-black mt-4">{message}</h4>
         <div class='inputCont col-md-8 col-lg-4 d-block m-auto'>
         <h5 class='text-center fw-bold mt-3 px-3 fs-2'>Create an account with us today</h5 >
 
@@ -90,11 +91,12 @@ function Signup() {
           <input type="text" placeholder="lastname" name="lastname" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.lastname}  onChange={handleChange} onBlur={handleBlur} />
           {errors.lastname && touched.lastname && <p className='error text-center'>{errors.lastname}</p>}
 
+          <input type="text" placeholder="phone-number" name="phoneNumber"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur}className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
+          {errors.phoneNumber && touched.phoneNumber && <p className='error text-center'>{errors.phoneNumber}</p>}
+
           <input type="text" placeholder="email" name="email" value={values.email} className="form-control w-75 d-block m-auto mt-4 text-center py-2" onChange={handleChange} onBlur={handleBlur} />
           {errors.email && touched.email && <p className='error text-center'>{errors.email}</p>} 
 
-          <input type="text" placeholder="phone-number" name="phoneNumber"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur}className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
-          {errors.phoneNumber && touched.phoneNumber && <p className='error text-center'>{errors.phoneNumber}</p>}
 
           <input type="password" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.password} onChange={handleChange} onBlur={handleBlur} />
           {errors.password && touched.password && <p className='error text-center'>{errors.password}</p>}
