@@ -42,7 +42,8 @@ function Login() {
       if(data.status == "ok"){
         alert("login successful");
         localStorage.setItem("token", data.data);
-        window.location.href = "/dashboard"
+        navigate('/dashboard')
+        // window.location.href = "/dashboard"
       }
       else{
         setLoginStatus("invalid login details")

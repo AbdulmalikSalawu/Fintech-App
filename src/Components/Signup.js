@@ -47,7 +47,8 @@ function Signup() {
           console.log(response.data)
           setMessage(response.data.message)
           if(response.data.message == "signup successful"){
-            window.location.href = "/login"
+            navigate('/login')
+            // window.location.href = "/login"
           }
           actions.resetForm();
       }).catch((error)=>{
