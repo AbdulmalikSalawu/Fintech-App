@@ -1,0 +1,35 @@
+.sideNav{
+    height: 100vh;
+    min-width: 21% !important;
+    background-color: rgb(12, 12, 56);
+}
+.dflex{
+    display: flex;
+    flex-direction: row;
+}
+i{
+    font-family: 'Times New Roman', Times, serif !important;
+    color: rgb(2, 39, 2);
+}
+.nav-btn{
+    background-color: rgb(12, 12, 56);
+    border: thin solid white;
+    border-radius: 0.4rem;
+    color: white;
+}
+.content{
+    display: block !important;
+}
+.card{
+    color: white;
+    width: 15rem;
+    min-height: 2rem !important;
+}
+.card1{background-color: blue;}
+.card2{background-color: purple;}
+.card3{background-color: rgb(26, 25, 25);}
+@media screen and (max-width:800px){
+    .dflex{
+        display: block;
+    }
+}
