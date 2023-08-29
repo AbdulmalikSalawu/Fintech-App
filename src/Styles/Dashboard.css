@@ -16,6 +16,8 @@ i{
 }
 img{
     border-radius: 50% !important;
+    height: 9rem !important;
+    width: 9rem !important;
 }
 .nav-btn{
     background-color: rgb(12, 12, 56);
@@ -37,5 +39,9 @@ img{
 @media screen and (max-width:800px){
     .dflex{
         display: block;
+    }
+    img{
+        height: 4.8 !important;
+        width: 4.8rem !important;
     }
 }

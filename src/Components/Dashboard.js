@@ -99,18 +99,12 @@ function Dashboard() {
 
           <div class='content ms-lg-5 mt-5'>
             <div>
-              <img class="w-50" src = {userData.newImage} alt="profile pic" />
+              <img class="d-block m-auto" src = {userData.newImage} alt="profile pic" />
               <span class='text-center fs-2 hi ms-3'><i>Hi {userData.firstname}😀</i></span><br></br>
-              {/* <h4 class='text-center'>Welcome to your dashboard!</h4> */}
+              <span class='text-center fs-3 ms-3'><i>{userData.email}</i></span><br></br>
               <span class='text-center ms-3'>It's Save o'clock</span><br></br>
-              <span class='text-center fs-3 ms-3'><i>{userData.email}</i></span>
               <button onClick={logOut} class='btn btn-danger text-white px-3 py-2 mt-4 d-block m-auto'>Sign Out</button>
             </div>
-
-          {/* Uploading image to the cloud storage */}
-          {/* <input type="file" class="mt-5" onChange={(e)=>getFile(e)}/><br />
-          <button className="btn btn-info px-2 d-block m-auto mt-2" onClick={upload}>Upload</button>
-          <img className="w-50" src={newImage} alt="" /> */}
 
             <div className='row mt-5 pt-3 mb-5'>
               <div className='cardcontainer text-white'>
