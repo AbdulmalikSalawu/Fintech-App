@@ -36,7 +36,7 @@ function Signup() {
     const userData = {file}
     axios.post(url,userData).then((response)=>{
       setNewImage(response.data.image)
-      alert(newImage)
+      alert("proflie picture added 😎")
      })
      .catch((error)=>{
         console.log(error)
@@ -56,9 +56,9 @@ function Signup() {
       await axios.post(url,{firstname,lastname,phoneNumber,email,password,newImage}).then((response)=>{
           console.log(response.data)
           setMessage(response.data.message)
-          navigate('/login')
-          // if(response.data.message == "signup successful"){
-          // }
+          if(response.data.message == "Signup successful"){
+            navigate('/login')
+          }
           actions.resetForm();
       }).catch((error)=>{
           console.log(error)
@@ -85,7 +85,7 @@ function Signup() {
     <div className="pt-3 body">
       {showNav ? (<div>
         <h4><img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/></h4>
-        <h4 className="text-center text-black mt-4">{message}</h4>
+        <h6 className="text-center text-black mt- fw-bold">{message}</h6>
         <div class='inputCont col-md-8 col-lg-4 d-block m-auto'>
         <h5 class='text-center fw-bold mt-4 px-3 fs-2'>Create an account with us today</h5>  
 

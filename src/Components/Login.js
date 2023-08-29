@@ -40,7 +40,7 @@ function Login() {
     .then((data) => {
       console.log(data, "userRegister");
       if(data.status == "ok"){
-        alert("login successful");
+        // alert("login successful");
         localStorage.setItem("token", data.data);
         navigate('/dashboard')
         actions.resetForm();
