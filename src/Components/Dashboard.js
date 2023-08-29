@@ -88,7 +88,7 @@ function Dashboard() {
     <div>
       {showNav ? (
 
-        <div class='dflex'>
+        <div class='dflex mainDiv'>
 
           <div class='sideNav d-none d-lg-block'>
             <button className='nav-btn nav-open-btn px-3 py-1 mt-3'>
@@ -99,7 +99,7 @@ function Dashboard() {
 
           <div class='content ms-lg-5 mt-5'>
             <div>
-              <img class="d-block m-auto" src = {userData.newImage} alt="profile pic" />
+              <img class="d-block m-auto profilePic" src = {userData.newImage} alt="profile pic" />
               <span class='text-center fs-2 hi ms-3'><i>Hi {userData.firstname}😀</i></span><br></br>
               <span class='text-center fs-3 ms-3'><i>{userData.email}</i></span><br></br>
               <span class='text-center ms-3'>It's Save o'clock</span><br></br>

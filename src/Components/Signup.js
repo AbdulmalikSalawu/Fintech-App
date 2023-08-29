@@ -102,12 +102,13 @@ function Signup() {
           {errors.email && touched.email && <p className='error text-center'>{errors.email}</p>} 
 
 
-          <input type="password" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.password} onChange={handleChange} onBlur={handleBlur} />
+          <input type="password" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.password} onChange={handleChange} onBlur={handleBlur} /><br></br>
           {errors.password && touched.password && <p className='error text-center'>{errors.password}</p>}
 
           {/* Uploading image to the cloud storage */}
+          <p class="ms-5">Add profile picture</p>
           <input type="file" class="form-control w-75 d-block m-auto mt-4 text-center py-2" onChange={(e)=>getFile(e)}/><br />
-          <button className="btn btn-info px-2 d-block m-auto" onClick={upload}>Upload</button>
+          <button className="btn btn-info px-2 d-block m-auto upload" onClick={upload}>Upload</button>
           {/* <img className="w-50" src={newImage} alt="" /> */}
           
           <button type='submit' disabled={isSubmitting} className="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white" onClick={handleSubmit}>Create Account</button>

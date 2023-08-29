@@ -14,7 +14,7 @@ i{
     font-family: 'Times New Roman', Times, serif !important;
     color: rgb(2, 39, 2);
 }
-img{
+.profilePic{
     border-radius: 50% !important;
     height: 9rem !important;
     width: 9rem !important;
@@ -37,10 +37,10 @@ img{
 .card2{background-color: purple;}
 .card3{background-color: rgb(26, 25, 25);}
 @media screen and (max-width:800px){
-    .dflex{
+    .mainDiv{
         display: block;
     }
-    img{
+    .profilePic{
         height: 4.8 !important;
         width: 4.8rem !important;
     }

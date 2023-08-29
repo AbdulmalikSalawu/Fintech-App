@@ -31,6 +31,7 @@ h3{
 input.input-error,select.input-error{
     border: thick solid rgb(141, 5, 5) !important;
 }
+.upload:hover{opacity: 0.35 !important;}
 /* button:disabled{
     opacity: 0.35 !important;
 } */

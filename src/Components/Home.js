@@ -34,7 +34,7 @@ function Home() {
         <div>
           {/* <Nav /> */}
           <div className='row pt-5 mb-5'>
-              <div className='col-sm-12 col-md-10 col-lg-6 mt-5 ms-5 pt-4'>
+              <div className='col-sm-12 col-md-10 col-lg-6 mt-3 mt-lg-5 ms-5 pt-4'>
                 <h1 className='mt-5 ms-5 bigHeading fw-bold'>The Better Way to Save and Invest</h1>
                 <p className='pe-lg-5 ms-5 fs-5 mission'>Piggy Vest helps over 4 million customers achieve their financial goals by helping them save and invest with ease.</p>
                 <button onClick={() => navigate('/signup')} className='createAcct ms-lg-5 mt-3'>Create free account</button><br/>
