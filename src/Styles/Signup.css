@@ -29,8 +29,11 @@ h3{
     font-size: 1rem;
 }
 input.input-error,select.input-error{
-    border-color: rgb(141, 5, 5);
+    border: thick solid rgb(141, 5, 5) !important;
 }
+/* button:disabled{
+    opacity: 0.35 !important;
+} */
 
 @media screen and (max-width: 600px) {
     .inputCont{

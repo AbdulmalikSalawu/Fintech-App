@@ -43,12 +43,11 @@ function Login() {
         alert("login successful");
         localStorage.setItem("token", data.data);
         navigate('/dashboard')
-        // window.location.href = "/dashboard"
+        actions.resetForm();
       }
       else{
         setLoginStatus("invalid login details")
       }
-      actions.resetForm();
     });
 }
     const {values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit} = useFormik({
@@ -78,7 +77,8 @@ function Login() {
             <input type="text" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-3 text-center py-2" value={values.password} onChange={handleChange} onBlur={handleBlur}/>
             {errors.password && touched.password && <p className='error text-center'>{errors.password}</p>}
 
-            <button type='submit' disabled={isSubmitting} className="btn d-block m-auto px-3 py-2 mt-5 w-75 text-white userLogin fs-5" onClick={handleSubmit}>Login</button>
+            <button disabled={isSubmitting} type='submit' className="btn btn-info d-block m-auto px-3 py-2 mt-5 w-75 text-white userLogin fs-5" onClick={handleSubmit}>Login</button>
+            
             <p class='text-center mt-1' onClick={()=> navigate('/signup')}>No account yet? Signup</p>
           </div>
         </div>

@@ -7,9 +7,15 @@
     display: flex;
     flex-direction: row;
 }
+input{
+    border-radius: 5px;
+}
 i{
     font-family: 'Times New Roman', Times, serif !important;
     color: rgb(2, 39, 2);
+}
+img{
+    border-radius: 50% !important;
 }
 .nav-btn{
     background-color: rgb(12, 12, 56);
