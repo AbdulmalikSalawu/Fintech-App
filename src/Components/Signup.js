@@ -33,15 +33,16 @@ function Signup() {
 
   //Uploading images to the cloudinary/POST request
    const upload = ()=>{
-    setUploadStatus("(uploading...)")
+     if(file == ""){
+      setUploadStatus("(🤳 select an image)")
+     } else {
+      setUploadStatus("(uploading)")
+     }
     const url = "https://abdulmalikyinka.onrender.com/saveFile"
     const userData = {file}
     axios.post(url,userData).then((response)=>{
       setNewImage(response.data.image)
       setUploadStatus("(image added ✔)")
-      if(file == ""){
-        setUploadStatus("(🤳 select an image)")
-      }
      })
      .catch((error)=>{
         console.log(error)

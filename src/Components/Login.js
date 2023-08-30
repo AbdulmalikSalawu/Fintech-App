@@ -36,12 +36,11 @@ function Login() {
         password,
       }),
     })
-    setLoginStatus("logging in ...")
     .then((res) => res.json())
     .then((data) => {
+      setLoginStatus("logging in ...")
       console.log(data, "userRegister");
       if(data.status == "ok"){
-        // alert("login successful");
         localStorage.setItem("token", data.data);
         navigate('/dashboard')
         actions.resetForm();
