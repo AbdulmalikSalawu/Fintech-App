@@ -1,9 +1,8 @@
 .body{
-    background-image: url('../Assets/background.jpg');
+    background-image: url('../Assets/background.jpg') !important;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    overflow-y: hidden !important;
 }
 input{
     background-color: rgb(230, 227, 227) !important;

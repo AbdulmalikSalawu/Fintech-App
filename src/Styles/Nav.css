@@ -90,7 +90,7 @@ small{
     nav a{
         margin-top: -1.4rem;
     }
-    .save{margin-top: 2rem;}
+    .save{margin-top: 3.7rem;}
     header .nav-btn{
         visibility: visible;
         opacity: 1;
@@ -132,9 +132,13 @@ small{
     .signinbtn{
         margin-bottom: -1.5rem;
         padding: 15px 5rem 15px 5rem;
+        position: relative;
+        top: -3.3rem;
     }
     .signupbtn{
         padding: 16px 1.2rem 16px 1.2rem;
+        position: relative;
+        top: -3.9rem;
     }
 }
 @media screen and (min-width:1150px) {

@@ -1,9 +1,8 @@
 .body{
-    background-image: url('../Assets/background.jpg');
+    background-image: url('../Assets/background.jpg') !important;
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    overflow-y: hidden !important;
+    /* height: 100vh; */
 }
 input{
     background-color: rgb(252, 251, 251) !important;
@@ -31,7 +30,7 @@ h3{
 input.input-error,select.input-error{
     border: thick solid rgb(141, 5, 5) !important;
 }
-.upload:hover{opacity: 0.35 !important;}
+.upload:hover{opacity: 0.6 !important;color: black;}
 /* button:disabled{
     opacity: 0.35 !important;
 } */

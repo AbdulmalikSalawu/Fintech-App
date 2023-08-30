@@ -72,10 +72,7 @@ ul{
 .saver{font-size: 3.5rem !important;}
 .socials{height: 1.5rem; width: 1.5rem !important; margin: 0;}
 .socialsCont{display: flex;}
-.testify{
-    height: 25rem;
-    width: 20rem !important;
-}
+.testify{height: 25rem;width: 20rem !important;}
 
 @media screen and (max-width:700px) {
     *{overflow-x: hidden !important;}
@@ -90,7 +87,7 @@ ul{
         width: 90% !important;
         margin: auto;
         margin-bottom: 2rem;
-        min-height: 21rem !important;
+        min-height: 23rem !important;
     }
     .card-body,.card-img-top{text-align: center; margin: auto;;}
     .feature{top: 3rem;left: 0.5rem !important;}
@@ -98,6 +95,8 @@ ul{
     .card-img-top,.feature{position: relative;left: -1rem;}
     .fff{display: none;}
     .mobilee{margin: auto;}
+    .bigHeading{font-size: 3rem;}
+    .security{font-size: 3rem !important;}
     .rounded-pill,.learnMore{display: block; margin: auto;}
     .access{font-size: 2rem; text-align: center;left: 1rem;}
     .meet,.featuredIn{display: flex; flex-direction: column; justify-content: center; text-align: center;}
@@ -140,7 +139,7 @@ ul{
 }
 @media screen and (max-width: 359px) {
     .bigHeading{font-size: 1.5rem !important;}
-    .mission{font-size: 1rem !important;}
+    .mission,.info{font-size: 0.9rem !important;}
     .mobilee{
         position: relative;
         right: 2rem;

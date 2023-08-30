@@ -21,6 +21,7 @@ function Signup() {
 
   //Converting images to base 64
   const [newImage, setNewImage] = useState("")
+  const [uploadStatus, setUploadStatus] = useState("")
   const getFile = (e)=>{
     const myFile = e.target.files[0]
     const reader = new FileReader()
@@ -32,11 +33,15 @@ function Signup() {
 
   //Uploading images to the cloudinary/POST request
    const upload = ()=>{
+    setUploadStatus("(uploading...)")
     const url = "https://abdulmalikyinka.onrender.com/saveFile"
     const userData = {file}
     axios.post(url,userData).then((response)=>{
       setNewImage(response.data.image)
-      alert("proflie picture added 😎")
+      setUploadStatus("(image added ✔)")
+      if(file == ""){
+        setUploadStatus("(🤳 select an image)")
+      }
      })
      .catch((error)=>{
         console.log(error)
@@ -51,6 +56,7 @@ function Signup() {
     const email = values.email;
     const password = values.password;
     // new Promise((resolve) => setTimeout(resolve, 1000))
+    setMessage("creating account...")
     const url = "https://abdulmalikyinka.onrender.com/signup"
     try {
       await axios.post(url,{firstname,lastname,phoneNumber,email,password,newImage}).then((response)=>{
@@ -85,10 +91,9 @@ function Signup() {
     <div className="pt-3 body">
       {showNav ? (<div>
         <h4><img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/></h4>
-        <h6 className="text-center text-black mt- fw-bold">{message}</h6>
-        <div class='inputCont col-md-8 col-lg-4 d-block m-auto'>
-        <h5 class='text-center fw-bold mt-4 px-3 fs-2'>Create an account with us today</h5>  
-
+        <div class='inputCont col-md-8 col-lg-4 d-block m-auto mb-5'>
+          <h6 className={(message == "Signup successful" || "creating account...")? "text-center text-success fs-3 fw-bold mt-2" : "text-center text-danger fs-3 fw-bold"}>{message}</h6>
+          <h5 class='text-center fw-bold mt-4 px-3 fs-2'>Create an account with us today</h5>  
           <input type="text" name='firstname' placeholder="firstname" className="form-control firstname w-75 d-block m-auto mt-3 text-center py-2 " value={values.firstname} onChange={handleChange} onBlur={handleBlur} />
           {errors.firstname && touched.firstname && <p className='error text-center'>{errors.firstname}</p>}
 
@@ -108,18 +113,12 @@ function Signup() {
           {/* Uploading image to the cloud storage */}
           <p class="ms-5">Add profile picture</p>
           <input type="file" class="form-control w-75 d-block m-auto mt-4 text-center py-2" onChange={(e)=>getFile(e)}/><br />
-          <button className="btn btn-info px-2 d-block m-auto upload" onClick={upload}>Upload</button>
+          <button className="btn btn-info px-2 d-block m-auto upload" onClick={upload}>Upload  {uploadStatus}</button>
           {/* <img className="w-50" src={newImage} alt="" /> */}
           
           <button type='submit' disabled={isSubmitting} className="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white" onClick={handleSubmit}>Create Account</button>
 
           <p class='text-center' onClick={()=> navigate('/login')}>Already have an account? Login</p>
-
-          {/* <input type="text" placeholder="firstname" name="firstname" className="form-control w-75 d-block m-auto mt-4 text-center" onChange={(e)=>(setFirstname(e.target.value))} />
-        <input type="text" placeholder="lastname" name="lastname" className="form-control w-75 d-block m-auto mt-3 text-center" onChange={(e)=>(setLastname(e.target.value))} />
-        <input type="text" placeholder="email" name="email" className="form-control w-75 d-block m-auto mt-3 text-center" onChange={(e)=>(setEmail(e.target.value))} />
-        <input type="password" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-3 text-center" onChange={(e)=>(setPassword(e.target.value))} />
-        <button type='submit' className="btn btn-info px-3 py-2 w-75 mt-5 fs-5 d-block m-auto border-0 userLogin text-white" onClick={createAccount}>Create Account</button> */}
 
          </div>
       </div>) : ""}

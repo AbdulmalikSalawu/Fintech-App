@@ -108,19 +108,19 @@ function Dashboard() {
 
             <div className='row mt-5 pt-3 mb-5'>
               <div className='cardcontainer text-white'>
-              <div class="card card1 col-lg-3 border-0">
+              <div class="card card1 col-lg-3 border-0 dcard">
                   <div class="card-body">
                       <p className="fs-5">Total Savings</p>
                       <p className='fs-4'>$5,000.00</p>
                   </div>
               </div>
-              <div class="card card2 col-lg-3 ms-lg-3 pt-3 border-0">
+              <div class="card card2 col-lg-3 ms-lg-3 pt-3 border-0 dcard">
                 <div class="card-body">
               <p class="card-title fw-bold fs-5">Total Investments</p>
               <p class="mt-4 fs-4">$17,286.00</p>
                 </div>
               </div>
-              <div class="card card3 col-lg-3 ms-lg-3 pt-3 border-0">
+              <div class="card card3 col-lg-3 ms-lg-3 pt-3 border-0 dcard">
                 <div class="card-body">
                   <p class="card-title fw-bold fs-5">Flex Dollar</p>
                   <p class="mt-4 fs-4">$0.00</p>

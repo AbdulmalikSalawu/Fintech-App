@@ -36,6 +36,7 @@ function Login() {
         password,
       }),
     })
+    setLoginStatus("logging in ...")
     .then((res) => res.json())
     .then((data) => {
       console.log(data, "userRegister");
@@ -65,10 +66,9 @@ function Login() {
         <div class='mt-5'>
           <img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/>
           <div class='inputCon col-md-8 col-lg-4 d-block m-auto mt-3'>
-            <h5 class='text-center mt-5 fw-bold fs-4'>Login to your account</h5>
+            <h4 className={(loginStatus == "invalid login details") ? "text-center text-danger mt-2" : "text-center text-success mt-2"}>{loginStatus}</h4>
+            <h5 class='text-center mt-3 fw-bold fs-4'>Login to your account</h5>
             <p class='text-center'>Securely login to your piggyvest</p>
-            <h4 className='text-center text-danger'>{loginStatus}</h4>
-
             <p class='ms-5'>Email</p>
             <input type="text" placeholder="email" name="email" className="form-control w-75 d-block m-auto mt-2 text-center py-2" value={values.email} onChange={handleChange} onBlur={handleBlur} />
             {errors.email && touched.email && <p className='error text-center'>{errors.email}</p>}

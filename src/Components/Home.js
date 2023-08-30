@@ -48,7 +48,7 @@ function Home() {
 
           <div className='col-lg-7 text-center mt-5 mb-5 px-3'>
             <img src={shield} className='me-5 shield mb-4' alt='shield' />
-            <h2 className='fs-1 fw-bold'>Your security is our priority</h2>
+            <h2 className='fs-1 fw-bold security'>Your security is our priority</h2>
             <p className='text-center fs-5 info'>PiggyVest uses the highest level of Internet Security and it is secured by 256 bits SSL security encryption to ensure that your information is comepletely protected from fraud.</p>
             <p className='text-info fs-5 fw-bold learn'><Link to='/' className='text-decoration-none'>Learn more</Link></p>
           </div>
