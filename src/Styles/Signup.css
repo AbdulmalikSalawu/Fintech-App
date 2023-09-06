@@ -32,6 +32,11 @@ input.input-error,select.input-error{
     border: thick solid rgb(141, 5, 5) !important;
 }
 .upload:hover{opacity: 0.6 !important;color: black;}
+.w-50{
+    width: 40% !important;
+    letter-spacing: 5px;
+    border: thin solid black !important;
+}
 /* button:disabled{
     opacity: 0.35 !important;
 } */
@@ -47,6 +52,11 @@ input.input-error,select.input-error{
         border-radius: 0.3rem;
         background-color: rgb(248, 246, 246) !important;
         width: 80% !important;
+    }
+    .w-50{
+        width: 40% !important;
+        letter-spacing: 5px;
+        border: thin solid black !important;
     }
 }
 @media screen and (max-width: 370px) {

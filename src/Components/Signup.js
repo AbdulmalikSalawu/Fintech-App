@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
-// import app from "./firebaseConfig"
-// import { getAuth, RecaptchaVerifier } from "firebase/auth";
+import app from "./firebaseConfig"
+import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+
 import {useFormik} from 'formik';
 import {signupSchema} from '../Schemas/schema';
 import axios from "axios"
@@ -11,8 +12,13 @@ import { navNotNeeded } from "../Features/navSlice";
 import { useNavigate } from "react-router";
 
 function Signup() {
+  const auth = getAuth(app);
   const [message,setMessage] = useState("")
   const [file, setFile] = useState("")
+  const [otp, setOtp] = useState("")
+  const [otpInput,setOtpInput] = useState(false)
+  const [verifyButton, setVerifyButton] = useState(false)
+  const [verifyOtp, setVerifyOtp] = useState(false)
   const showNav = useSelector((state) => state.navbar.show)
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -32,7 +38,7 @@ function Signup() {
       setFile(reader.result)
     }
   }
-
+  
   //Uploading images to the cloudinary/POST request
    const upload = ()=>{
      if(file == ""){
@@ -76,7 +82,7 @@ function Signup() {
       console.log(error)
     }
   }
-
+  
   const {values, errors, touched, isSubmitting,  handleBlur, handleChange, handleSubmit} = 
   useFormik({
     initialValues: {
@@ -89,6 +95,65 @@ function Signup() {
     validationSchema: signupSchema,
     onSubmit,
   })
+
+  const checkMobile = () => {
+    if(values.phoneNumber.length==9){
+      setVerifyButton(true)
+  }
+}
+
+//SENDING OTP TO USERS' NUMBER
+const onSignInSubmit = () => {
+  onCaptchVerify();
+  const phoneNumber = "+234" + values.phoneNumber;
+  const appVerifier = window.recaptchaVerifier;
+  signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+  .then((confirmationResult) => {
+    // SMS sent. Prompt user to type the code from the message, then sign the
+    // user in with confirmationResult.confirm(code).
+    window.confirmationResult = confirmationResult;
+    alert("otp sent")
+    // ...
+  }).catch((error) => {
+    // Error; SMS not sent
+    // ...
+  });
+}
+
+  const onCaptchVerify = () => {
+      setOtpInput(true)
+      setVerifyButton(false)
+      window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+          'size': 'invisible',
+          'callback': (response) => {
+            onSignInSubmit()
+            // reCAPTCHA solved, allow signInWithPhoneNumber.
+            // ...
+          },
+          'expired-callback': () => {
+            // Response expired. Ask user to solve reCAPTCHA again.
+            // ...
+          }
+        });
+  }
+
+  //CONFIRMING THE OTP INPUTTED
+  const verifyCode = () => {
+    window.confirmationResult.confirm(otp)
+    .then((result) => {
+      const user = result.user;
+      console.log(user)
+      alert("verification done");
+    }).catch((error) => {
+      alert("invalid OTP")
+    })
+  }
+
+  const checkOtp = () => {
+    if(otp.length==5){
+      setVerifyOtp(true)
+  }
+}
 
   return (
     <div className="pt-3 body">
@@ -103,9 +168,19 @@ function Signup() {
           <input type="text" placeholder="lastname" name="lastname" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.lastname}  onChange={handleChange} onBlur={handleBlur} />
           {errors.lastname && touched.lastname && <p className='error text-center'>{errors.lastname}</p>}
 
-          <input type="text" placeholder="phone-number" name="phoneNumber"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur}className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
+          <div id="recaptcha-container"></div>
+          {/* PHONE NUMBER VERIFICATION */}
+          <input type="text" placeholder="phone-number" name="phoneNumber"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} onInput={checkMobile} className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
           {errors.phoneNumber && touched.phoneNumber && <p className='error text-center'>{errors.phoneNumber}</p>}
 
+          {verifyButton ? <button onClick={onSignInSubmit} class="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white">send OTP</button> : ""}
+
+          {/* OTP VERIFICATION */}
+          {otpInput ? <input type="number" placeholder="------" value={otp} onChange={e => {setOtp(e.target.value)}} onInput={checkOtp} className="form-control w-50 fs-2 d-block m-auto mt-4 text-center py-2" /> : ""}
+
+          {verifyOtp ? <button onClick={verifyCode} class="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white">Confirm</button> : ""}
+
+          {/* EMAIL ADDRESS */}
           <input type="text" placeholder="email" name="email" value={values.email} className="form-control w-75 d-block m-auto mt-4 text-center py-2" onChange={handleChange} onBlur={handleBlur} />
           {errors.email && touched.email && <p className='error text-center'>{errors.email}</p>} 
 
@@ -121,7 +196,9 @@ function Signup() {
           
           <button type='submit' disabled={isSubmitting} className="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white" onClick={handleSubmit}>Create Account</button>
 
-          <p class='text-center' onClick={()=> navigate('/login')}>Already have an account? Login</p>
+          
+
+          <p class='text-center mb-5' onClick={()=> navigate('/login')}>Already have an account? Login</p>
 
          </div>
       </div>) : ""}
