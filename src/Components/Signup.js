@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react"
+// import app from "./firebaseConfig"
+// import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import {useFormik} from 'formik';
 import {signupSchema} from '../Schemas/schema';
 import axios from "axios"
@@ -92,7 +94,7 @@ function Signup() {
     <div className="pt-3 body">
       {showNav ? (<div>
         <h4><img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/></h4>
-        <div class='inputCont col-md-8 col-lg-4 d-block m-auto mb-5'>
+        <div class='inputCont mt-3 col-md-8 col-lg-4 d-block m-auto mb-5'>
           <h6 className={(message == "Signup successful" || "creating account...")? "text-center text-success fs-3 fw-bold mt-2" : "text-center text-danger fs-3 fw-bold"}>{message}</h6>
           <h5 class='text-center fw-bold mt-4 px-3 fs-2'>Create an account with us today</h5>  
           <input type="text" name='firstname' placeholder="firstname" className="form-control firstname w-75 d-block m-auto mt-3 text-center py-2 " value={values.firstname} onChange={handleChange} onBlur={handleBlur} />

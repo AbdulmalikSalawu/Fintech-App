@@ -52,7 +52,7 @@ function Nav() {
   return (
     <div>
         <header className='sticky-top shadow-sm'>
-            <h4 className='ms- mt-2'><img src={logo} alt="svg image"/></h4>
+            <h4 className='ms- mt- navsvg'><img src={logo} alt="svg image"/></h4>
             <nav ref={navRef} className='pb-2'>
                 <NavLink className='save' onClick={navLinks} onMouseOver={displayMenu} onMouseLeave={hideMenu} to ='/'>Save</NavLink>
                 <NavLink to='/invest' onClick={navLinks}>Invest</NavLink>

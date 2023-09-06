@@ -2,6 +2,7 @@
     background-image: url('../Assets/background.jpg') !important;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
 }
 input{
@@ -39,7 +40,7 @@ input.input-error,select.input-error{
 @media screen and (max-width: 650px) {
     .inputCon{
         width: 95%; 
-        min-height: 53vh;
+        min-height: 50vh;
     }
     .userLogin:hover{
         opacity: 0.5 !important;

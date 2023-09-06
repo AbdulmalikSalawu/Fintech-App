@@ -64,7 +64,7 @@ function Login() {
       {showNav ? (
         <div class='mt-5'>
           <img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/>
-          <div class='inputCon col-md-8 col-lg-4 d-block m-auto mt-3'>
+          <div class='inputCon col-md-8 col-lg-4 d-block m-auto mt-4'>
             <h4 className={(loginStatus == "invalid login details") ? "text-center text-danger mt-2" : "text-center text-success mt-2"}>{loginStatus}</h4>
             <h5 class='text-center mt-3 fw-bold fs-4'>Login to your account</h5>
             <p class='text-center'>Securely login to your piggyvest</p>

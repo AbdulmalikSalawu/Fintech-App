@@ -2,6 +2,7 @@
     background-image: url('../Assets/background.jpg') !important;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     /* height: 100vh; */
 }
 input{

@@ -51,6 +51,11 @@ function Dashboard() {
         .then((data)=> {
             console.log(data, "userData")
             setUserData(data.data)
+            if (data.data=="token expired") {
+              alert("session expired, login again");
+              localStorage.clear();
+              navigate('/login')
+            }
           })
       }, [])
 

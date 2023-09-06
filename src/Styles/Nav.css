@@ -141,6 +141,9 @@ small{
         top: -3.9rem;
     }
 }
+@media screen and (max-width: 340px){
+    .save{margin-top: 4rem;}
+}
 @media screen and (min-width:1150px) {
     .save{
         margin-left: 2rem;
