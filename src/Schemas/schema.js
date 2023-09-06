@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
         
 const passwordRules = /^(?=.*\d)(?=.*[a-z]).{5,}$/;
-const numberRules = /^[\d]{11}$/
+const numberRules = /^[\d]{10}$/
 
 export const signupSchema = Yup.object().shape({
     email: Yup.string().email("Please enter a valid email").required("Required"),
@@ -9,8 +9,8 @@ export const signupSchema = Yup.object().shape({
     lastname: Yup.string().min(2, "must be at least two characters").required("Required"),
     phoneNumber: Yup
         .string()
-        .matches(numberRules, "must be exactly 11 digits")
-        .max(11, "must not exceed 11 digits")
+        .matches(numberRules, "incorrect phone number")
+        .max(10, "must not exceed 10 digits")
         .required("Required"),
     password: Yup
         .string()

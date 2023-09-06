@@ -19,6 +19,7 @@ function Signup() {
   const [otpInput,setOtpInput] = useState(false)
   const [verifyButton, setVerifyButton] = useState(false)
   const [verifyOtp, setVerifyOtp] = useState(false)
+  const [success, setShowSuccess] = useState(false)
   const showNav = useSelector((state) => state.navbar.show)
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -58,30 +59,34 @@ function Signup() {
    }
 
   const onSubmit = async (values, actions) => {
-    console.log(values);
-    const firstname = values.firstname;
-    const lastname = values.lastname;
-    const phoneNumber = values.phoneNumber;
-    const email = values.email;
-    const password = values.password;
-    // new Promise((resolve) => setTimeout(resolve, 1000))
-    setMessage("creating account...")
-    const url = "https://abdulmalikyinka.onrender.com/signup"
-    try {
-      await axios.post(url,{firstname,lastname,phoneNumber,email,password,newImage}).then((response)=>{
-          console.log(response.data)
-          setMessage(response.data.message)
-          if(response.data.message == "Signup successful"){
-            navigate('/login')
-          }
-          actions.resetForm();
-      }).catch((error)=>{
-          console.log(error)
-      }) }
-    catch(error){
-      console.log(error)
+    if(success === true){
+      console.log(values);
+      const firstname = values.firstname;
+      const lastname = values.lastname;
+      const phoneNumber = values.phoneNumber;
+      const email = values.email;
+      const password = values.password;
+      // new Promise((resolve) => setTimeout(resolve, 1000))
+      setMessage("creating account...")
+      const url = "https://abdulmalikyinka.onrender.com/signup"
+      try {
+        await axios.post(url,{firstname,lastname,phoneNumber,email,password,newImage}).then((response)=>{
+            console.log(response.data)
+            setMessage(response.data.message)
+            if(response.data.message == "Signup successful"){
+              navigate('/login')
+            }
+            actions.resetForm();
+        }).catch((error)=>{
+            console.log(error)
+        }) }
+      catch(error){
+        console.log(error)
+      }
+    } else{
+      setMessage("verify your number")
     }
-  }
+    }
   
   const {values, errors, touched, isSubmitting,  handleBlur, handleChange, handleSubmit} = 
   useFormik({
@@ -144,6 +149,9 @@ const onSignInSubmit = () => {
       const user = result.user;
       console.log(user)
       alert("verification done");
+      setOtpInput(false);
+      setVerifyOtp(false)
+      setShowSuccess(true)
     }).catch((error) => {
       alert("invalid OTP")
     })
@@ -170,7 +178,7 @@ const onSignInSubmit = () => {
 
           <div id="recaptcha-container"></div>
           {/* PHONE NUMBER VERIFICATION */}
-          <input type="text" placeholder="phone-number" name="phoneNumber"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} onInput={checkMobile} className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
+          <input type="text" placeholder="phone-number" name="phoneNumber" autoComplete="off"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} onInput={checkMobile} className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
           {errors.phoneNumber && touched.phoneNumber && <p className='error text-center'>{errors.phoneNumber}</p>}
 
           {verifyButton ? <button onClick={onSignInSubmit} class="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white">send OTP</button> : ""}
@@ -179,6 +187,7 @@ const onSignInSubmit = () => {
           {otpInput ? <input type="number" placeholder="------" value={otp} onChange={e => {setOtp(e.target.value)}} onInput={checkOtp} className="form-control w-50 fs-2 d-block m-auto mt-4 text-center py-2" /> : ""}
 
           {verifyOtp ? <button onClick={verifyCode} class="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white">Confirm</button> : ""}
+          {success ? <p className="text-success text-center">Phone Number Verified</p> : ""}
 
           {/* EMAIL ADDRESS */}
           <input type="text" placeholder="email" name="email" value={values.email} className="form-control w-75 d-block m-auto mt-4 text-center py-2" onChange={handleChange} onBlur={handleBlur} />
