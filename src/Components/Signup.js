@@ -20,6 +20,7 @@ function Signup() {
   const [verifyButton, setVerifyButton] = useState(false)
   const [verifyOtp, setVerifyOtp] = useState(false)
   const [success, setShowSuccess] = useState(false)
+  const [wrongOtp, setWrongOtp] = useState(false)
   const showNav = useSelector((state) => state.navbar.show)
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -148,12 +149,14 @@ const onSignInSubmit = () => {
     .then((result) => {
       const user = result.user;
       console.log(user)
-      alert("verification done");
+      // alert("verification done");
       setOtpInput(false);
       setVerifyOtp(false)
       setShowSuccess(true)
+      setWrongOtp(false)
     }).catch((error) => {
       alert("invalid OTP")
+      setWrongOtp(true)
     })
   }
 
@@ -178,22 +181,25 @@ const onSignInSubmit = () => {
 
           <div id="recaptcha-container"></div>
           {/* PHONE NUMBER VERIFICATION */}
-          <input type="text" placeholder="phone-number" name="phoneNumber" autoComplete="off"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} onInput={checkMobile} className="form-control w-75 d-block m-auto mt-4 text-center py-2" />
+          <span class="pe-lg-1">
+            <input value="+234" class='w-25 d-block m-auto mt-4 text-center py-2 border-0 ms-3' />
+            <input type="text" placeholder="phone-number" name="phoneNumber" autoComplete="off"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} onInput={checkMobile} className="form-control phoneNo d-block m-auto mt-4 me-5 fs-5 text-center py-2" />
+          </span>
           {errors.phoneNumber && touched.phoneNumber && <p className='error text-center'>{errors.phoneNumber}</p>}
 
           {verifyButton ? <button onClick={onSignInSubmit} class="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white">send OTP</button> : ""}
 
           {/* OTP VERIFICATION */}
-          {otpInput ? <input type="number" placeholder="------" value={otp} onChange={e => {setOtp(e.target.value)}} onInput={checkOtp} className="form-control w-50 fs-2 d-block m-auto mt-4 text-center py-2" /> : ""}
+          {otpInput ? <input type="number" placeholder="------" value={otp} onChange={e => {setOtp(e.target.value)}} onInput={checkOtp} className="form-control w-50 fs-3 d-block m-auto mt-4 text-center py-2" /> : ""}
 
           {verifyOtp ? <button onClick={verifyCode} class="btn btn-info px-3 py-2 w-75 mt-3 fs-5 d-block m-auto border-0 userLogin text-white">Confirm</button> : ""}
-          {success ? <p className="text-success text-center">Phone Number Verified</p> : ""}
+          {success ? <p className="text-success text-center">Phone Number Verified</p> : wrongOtp? <p className ="text-danger text-center">Invalid OTP</p> : ""}
 
           {/* EMAIL ADDRESS */}
           <input type="text" placeholder="email" name="email" value={values.email} className="form-control w-75 d-block m-auto mt-4 text-center py-2" onChange={handleChange} onBlur={handleBlur} />
           {errors.email && touched.email && <p className='error text-center'>{errors.email}</p>} 
 
-
+          {/*PASSWORD*/}
           <input type="password" placeholder="password" name="password" className="form-control w-75 d-block m-auto mt-4 text-center py-2" value={values.password} onChange={handleChange} onBlur={handleBlur} /><br></br>
           {errors.password && touched.password && <p className='error text-center'>{errors.password}</p>}
 

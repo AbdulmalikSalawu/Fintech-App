@@ -40,6 +40,8 @@ input.input-error,select.input-error{
 /* button:disabled{
     opacity: 0.35 !important;
 } */
+span{display: flex !important;}
+.phoneNo{width: 65% !important;}
 
 @media screen and (max-width: 600px) {
     .inputCont{
@@ -58,6 +60,7 @@ input.input-error,select.input-error{
         letter-spacing: 5px;
         border: thin solid black !important;
     }
+    .phoneNo{width: 65% !important;}
 }
 @media screen and (max-width: 370px) {
     .userLogin{
