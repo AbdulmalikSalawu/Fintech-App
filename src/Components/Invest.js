@@ -134,14 +134,14 @@ function Invest() {
             <div class="card col-lg-5 ms-lg-5 pt-3 pb-3 bg-light border-0">
               <div class="card-body px-4 text-center text-lg-start">
                 <h6 class="card-title fw-bold">Balqeez J.</h6>
-                <p class="card-text mt-2">Thank you piggy vest for creating this platform for young entrepreneurs like me, this is my third year with Piggyvest. When I started saving with Piggyvest, I was just a 20 years old girl struggling as a beginner lash tech while in uni. Within these years I have been able to save over 5 million naira from my business. And every time I cash out my money I’ve been able to do tangible things with it. In 2021 I launched my branded lash tray from the money I saved with PiggyVest. I’ve been able to grow myself from 0-100. Recently I opened a beauty salon, all thanks to Piggyvest. I could go on and on 😫😫😫</p>
+                <p class="card-text mt-2">Thank you saveWyse for creating this platform for young entrepreneurs like me, this is my third year with saveWyse. When I started saving with saveWyse, I was just a 20 years old girl struggling as a beginner lash tech while in uni. Within these years I have been able to save over 5 million naira from my business. And every time I cash out my money I’ve been able to do tangible things with it. In 2021 I launched my branded lash tray from the money I saved with saveWyse. I’ve been able to grow myself from 0-100. Recently I opened a beauty salon, all thanks to saveWyse. I could go on and on 😫😫😫</p>
               </div>
             </div>
 
             <div class="card col-lg-7 border-0">
                 <div class="card-body ms-lg-5 ps-lg-5 text-center text-lg-start">
                   <p className="fs-2 fw-bold fourways">4 Million + customers</p>
-                  <p className='fs-5 col-lg-9'>Since launching in 2016, over 4,000,000 people have used PiggyVest to manage their money better, avoid over-spending and be more accountable..</p>
+                  <p className='fs-5 col-lg-9'>Since launching in 2016, over 4,000,000 people have used saveWyse to manage their money better, avoid over-spending and be more accountable..</p>
                   <button onClick={()=>navigate("/signup")} className='start fs-5 mt-4'>Create free account</button><br />
                   <div className='btnDuo mt-3'>
                   <button className='mt-4 btn btn-white border border-secondary px-3 py-2 iphone2'><img src={apple} className='apple ms-0' alt='apple' />Get on iPhone</button>

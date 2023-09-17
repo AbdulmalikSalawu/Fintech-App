@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import '../Styles/Login.css'
-import whiteLogo from '../Assets/whiteLogo.svg';
+import logo from '../Assets/icon.png';
+// import whiteLogo from '../Assets/whiteLogo.svg';
 import { navNotNeeded } from '../Features/navSlice';
 import { useNavigate } from 'react-router';
 import {useFormik} from 'formik';
@@ -63,7 +64,8 @@ function Login() {
     <div class='body'>
       {showNav ? (
         <div class='mt-5'>
-          <img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/>
+          {/* <img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/> */}
+          <span className='toplogo'><img class="logo mt-3 me-1" src={logo} alt="svg image"/><span class="brandname fw-bold text-white ms-2">saveWyse</span></span>
           <div class='inputCon col-md-8 col-lg-4 d-block m-auto mt-4'>
             <h4 className={(loginStatus == "invalid login details") ? "text-center text-danger mt-2" : "text-center text-success mt-2"}>{loginStatus}</h4>
             <h5 class='text-center mt-3 fw-bold fs-4'>Login to your account</h5>

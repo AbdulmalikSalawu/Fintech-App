@@ -37,11 +37,25 @@ input.input-error,select.input-error{
     letter-spacing: 5px;
     border: thin solid black !important;
 }
+.logo{
+    width: 3.5rem !important;
+    height: 3.2rem;
+}
 /* button:disabled{
     opacity: 0.35 !important;
 } */
-span{display: flex !important;}
+.toplogo{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+}
 .phoneNo{width: 65% !important;}
+.brandname{
+    position: relative;
+    right: 0.5rem;
+    top: 1.4rem !important;
+    font-size: 1.6rem;
+}
 
 @media screen and (max-width: 600px) {
     .inputCont{
@@ -61,6 +75,7 @@ span{display: flex !important;}
         border: thin solid black !important;
     }
     .phoneNo{width: 65% !important;}
+    
 }
 @media screen and (max-width: 370px) {
     .userLogin{

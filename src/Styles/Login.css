@@ -36,6 +36,12 @@ h5{
 input.input-error,select.input-error{
     border-color: rgb(141, 5, 5);
 }
+.brandname{
+    position: relative;
+    right: 0.5rem;
+    top: 1.4rem !important;
+    font-size: 1.6rem;
+}
 
 @media screen and (max-width: 650px) {
     .inputCon{

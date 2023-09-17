@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react"
 import app from "./firebaseConfig"
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-
+import logo from '../Assets/icon.png';
 import {useFormik} from 'formik';
 import {signupSchema} from '../Schemas/schema';
 import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import '../Styles/Signup.css'
-import whiteLogo from '../Assets/whiteLogo.svg';
+// import whiteLogo from '../Assets/whiteLogo.svg';
 import { navNotNeeded } from "../Features/navSlice";
 import { useNavigate } from "react-router";
 
@@ -169,7 +169,8 @@ const onSignInSubmit = () => {
   return (
     <div className="pt-3 body">
       {showNav ? (<div>
-        <h4><img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/></h4>
+        {/* <h4><img className='d-block mt-3 m-auto' src={whiteLogo} alt="svg image"/></h4> */}
+        <span className='toplogo'><img class="logo mt-3 me-1" src={logo} alt="svg image"/><span class="brandname fw-bold text-white ms-2">saveWyse</span></span>
         <div class='inputCont mt-3 col-md-8 col-lg-4 d-block m-auto mb-5'>
           <h6 className={(message == "Signup successful" || "creating account...")? "text-center text-success fs-3 fw-bold mt-2" : "text-center text-danger fs-3 fw-bold"}>{message}</h6>
           <h5 class='text-center fw-bold mt-4 px-3 fs-2'>Create an account with us today</h5>  
@@ -181,7 +182,7 @@ const onSignInSubmit = () => {
 
           <div id="recaptcha-container"></div>
           {/* PHONE NUMBER VERIFICATION */}
-          <span class="pe-lg-1">
+          <span class="pe-lg-1 d-flex">
             <input value="+234" class='w-25 d-block m-auto mt-4 text-center py-2 border-0 ms-3' />
             <input type="text" placeholder="phone-number" name="phoneNumber" autoComplete="off"  value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} onInput={checkMobile} className="form-control phoneNo d-block m-auto mt-4 me-5 fs-5 text-center py-2" />
           </span>

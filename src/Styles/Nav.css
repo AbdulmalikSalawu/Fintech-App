@@ -11,11 +11,21 @@ header{
     justify-content: space-between;
     height: 70px;
     overflow: hidden !important;
+    overflow-y: hidden !important;
     position: fixed !important;
     z-index: 1;
     width: 100%;
     color: var(--textColor);
     background-color: white;
+}
+.navsvg{
+    position: relative;
+    right: 3.3rem;
+}
+.logo{
+    border-radius: 50% !important;
+    width: 5rem !important;
+    height: 4rem;
 }
 .bg-white{
     position: fixed;
@@ -26,6 +36,15 @@ header{
     padding: 1rem;
     left: 18rem;
 }
+.brandname{
+    color: #0c1825;
+    font-size: 1.8rem;
+    font-family: cursive !important;
+    position: relative;
+    right: 3rem;
+    top: 0.7rem;
+}
+span{overflow-y: hidden;}
 small{
     position: relative;
     bottom: 1.5rem;
@@ -85,7 +104,7 @@ small{
     top: 0.1rem;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 950px) {
     
     nav a{
         margin-top: -1.4rem;
@@ -140,9 +159,21 @@ small{
         position: relative;
         top: -3.9rem;
     }
+    .brandname{
+        position: relative;
+        right: 0.5rem;
+        top: 1rem !important;
+        font-size: 1.6rem;
+    }
 }
-@media screen and (max-width: 340px){
+@media screen and (max-width: 350px){
     .save{margin-top: 4rem;}
+    .brandname{
+        font-size: 1.1rem;
+        position: relative;
+        top: 1.8rem;
+        right: 2.8rem;
+    }
 }
 @media screen and (min-width:1150px) {
     .save{

@@ -1,6 +1,6 @@
 import React, {useRef,useState} from 'react'
 import { FaBars, FaTimes} from 'react-icons/fa';
-import logo from '../Assets/piggyIcon.svg';
+import logo from '../Assets/icon.png';
 // import { useNavigate } from 'react-router-dom';
 import { NavLink, useNavigate } from 'react-router-dom';
 import '../Styles/Nav.css'
@@ -52,7 +52,8 @@ function Nav() {
   return (
     <div>
         <header className='sticky-top shadow-sm'>
-            <h4 className='ms- mt- navsvg'><img src={logo} alt="svg image"/></h4>
+            <span className='navsvg d-flex ms-lg-3'><img class="logo ms-5" src={logo} alt="svg image"/><span class="brandname mb-lg-3 fw-bold">saveWyse</span></span>
+            {/* <span class="brandname fw-bold">saveWyse</span> */}
             <nav ref={navRef} className='pb-2'>
                 <NavLink className='save' onClick={navLinks} onMouseOver={displayMenu} onMouseLeave={hideMenu} to ='/'>Save</NavLink>
                 <NavLink to='/invest' onClick={navLinks}>Invest</NavLink>

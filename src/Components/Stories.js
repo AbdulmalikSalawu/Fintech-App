@@ -30,7 +30,7 @@ function Stories() {
           <div className='row pt-5 mb-5'>
               <div className='col-sm-12 col-md-10 col-lg-5 ps-5 ms-4 ms-lg-0 mt-5 pt-4'>
                 <h1 className='mt-5 ms-4 ms-lg-5 bigHeading fw-bold'>Loved by our Customers💙</h1>
-                <p className='pe-lg-5 ms-4 ms-lg-5 fs-5 aim'>Piggy Vest helps over 4 million customers achieve their financial goals by helping them save and invest with ease.</p>
+                <p className='pe-lg-5 ms-4 ms-lg-5 fs-5 aim'>saveWyse helps over 4 million customers achieve their financial goals by helping them save and invest with ease.</p>
                 <button onClick={() => navigate('/signup')} className='createAcct ms-lg-5 mt-3'>Add your story</button><br/>
               </div>
               <div className='col-lg-7 pt-5 bg-dange'>
@@ -49,21 +49,21 @@ function Stories() {
               <img class="card-img-top mb-4" src={juliana} alt="Card image cap" />
               <div class="card-body">
               <h4 class="card-title fw-bold">Balqeez J.</h4>
-              <p class="card-text mt-4 fs-5">Thank you piggyVest for creating a platform for young entrepreneurs like me.</p>
+              <p class="card-text mt-4 fs-5">Thank you saveWyse for creating a platform for young entrepreneurs like me.</p>
               </div>
             </div>
             <div class="card col-lg-3 ms-lg-3 pt-3 pb-3 bg-light border-0">
               <img class="card-img-top mb-4" src={juliana} alt="Card image cap" />
               <div class="card-body">
             <h4 class="card-title fw-bold">Juliana M</h4>
-            <p class="card-text mt-4 fs-5">piggyVest has really helped me in the course of my business. It has been amazing saving money with them.</p>
+            <p class="card-text mt-4 fs-5">saveWyse has really helped me in the course of my business. It has been amazing saving money with them.</p>
             </div>
             </div>
             <div class="card col-lg-3 ms-lg-3 pt-3 bg-light border-0">
                 <img class="card-img-top mb-4" src={juliana} alt="Card image cap" />
                 <div class="card-body">
                     <h4 class="card-title fw-bold">Favour Nnena</h4>
-                    <p class="card-text mt-4 fs-5">piggyVest has helped me with discipline principles for saving. I am grateful to come this far, thanks</p>
+                    <p class="card-text mt-4 fs-5">saveWyse has helped me with discipline principles for saving. I am grateful to come this far, thanks</p>
                 </div>
                 </div>
               </div>
