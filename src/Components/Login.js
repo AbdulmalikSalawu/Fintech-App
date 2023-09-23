@@ -36,6 +36,7 @@ function Login() {
         email,
         password,
       }),
+      
     })
     .then((res) => res.json())
     .then((data) => {
