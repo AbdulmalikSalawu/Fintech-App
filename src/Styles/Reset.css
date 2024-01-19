@@ -1,0 +1,10 @@
+.body{
+    background-color: #0c1825 !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.inputCon{
+    min-height: 30vh;
+}
