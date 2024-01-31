@@ -16,11 +16,11 @@ function Adminpage() {
   return (
     <div>
         <h1>Welcome Admin</h1>
-        <table class='mt-5'>
+        <table class='table table-bordered mt-5'>
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone Number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
             </tr>
             {data.map(i=>{
                 return(
@@ -32,7 +32,6 @@ function Adminpage() {
                 )
             })}
         </table>
-        <h1>Welcome Admin</h1>
     </div>
   )
 }
