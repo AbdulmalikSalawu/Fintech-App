@@ -31,7 +31,7 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/dashboard' element={<Dashboard />}></Route>
-        <Route path='/updatepassword' element={<Updatedetails />}></Route>
+        <Route path='/updatedetails' element={<Updatedetails />}></Route>
         <Route path='/resetpassword' element={<Resetpassword />}></Route>
         <Route path='/adminpage' element={<Adminpage />}></Route>
         <Route path='*' element={<Nomatch />}></Route>

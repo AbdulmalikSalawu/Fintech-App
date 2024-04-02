@@ -114,7 +114,7 @@ function Dashboard() {
 
               {/* DIRECTING USERS TO EDIT THEIR DETAILS */}
               {/* <p><FontAwesomeIcon icon="fa-regular fa-pen-to-square" onClick={()=>navigate("/updatedetails", {state:userData})} /></p> */}
-              <p className='f-2 ms-2' onClick={()=>navigate('/updatepassword', {state:userData})}>✏🖍</p>
+              <p className='f-2 ms-2' onClick={()=>navigate('/updatedetails', {state:userData})}>✏🖍</p>
             </div>
 
             <div className='row mt-5 pt-3 mb-5'>

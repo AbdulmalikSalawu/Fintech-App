@@ -8,8 +8,8 @@ import whiteLogo from '../Assets/whiteLogo.svg';
 import axios from 'axios';
 
 function Updatedetails() {
-    const [fname, setFname] = useState("")
-    const [lname, setLname] = useState("")
+    const [firstname, setFirstName] = useState("")
+    const [lastname, setLastName] = useState("")
     const [email, setEmail] = useState("")
   const dispatch = useDispatch()
   useEffect(() => {
@@ -21,22 +21,46 @@ function Updatedetails() {
 
   useEffect(()=> {
         console.log(location)
-        setFname(location.state.firstname)
-        setLname(location.state.lastname)
+        setFirstName(location.state.firstname)
+        setLastName(location.state.lastname)
         setEmail(location.state.email)
   }, [])
 
     const updateData = () => {
-        console.log(fname,lname)
+        fetch("http://localhost:5000/updatedetails", {
+            method: "POST",
+            crossDomain: true,
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify({
+              id:location.state._id,
+              nameone:firstname,
+              nametwo:lastname
+            }),
+          })
+          .then((res)=>res.json())
+          .then((data)=> {
+              console.log(firstname,lastname)
+              console.log(data)
+              navigate('/dashboard')
+            })
     }
 
   return (
     <div>
         <h1 className='text-center mt-3'>Edit your details</h1>
 
-        <input type="text" placeholder="firstname" className="form-control w-50 d-block m-auto mt-2 text-center py-2" defaultValue={fname} onchange={(e)=>setFname(e.target.value)} />
-        <input type="text" placeholder="lastname" className="form-control w-50 d-block m-auto mt-2 text-center py-2" defaultValue={lname} onchange={(e)=>setLname(e.target.value)} />
-        <input type="text" placeholder="firstname" className="form-control w-50 d-block m-auto mt-2 text-center py-2" disabled defaultValue={email} />
+        <input type="text" className="form-control w-75 d-block m-auto mt-4 text-center py-2"
+        defaultValue={firstname} 
+        onChange={(e)=>setFirstName(e.target.value)} />
+        <input type="text" className="form-control w-75 d-block m-auto mt-2 text-center py-2"
+        defaultValue={lastname}
+        onChange={(e)=>setLastName(e.target.value)} />
+
+        <input type="text" placeholder="firstname" className="form-control w-75 d-block m-auto mt-2 text-center py-2" disabled defaultValue={email} />
 
         <button onClick={updateData} className='btn btn-info px-2 d-block m-auto mt-3'>Update details</button>
 
