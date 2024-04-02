@@ -6,6 +6,7 @@ import { navNotNeeded } from '../Features/navSlice'
 import '../Styles/Dashboard.css'
 import whiteLogo from '../Assets/whiteLogo.svg';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Dashboard() {
   const dispatch = useDispatch()
@@ -35,7 +36,8 @@ function Dashboard() {
 
       //FETCH method
       useEffect(() => {
-        fetch("https://abdulmalikyinka.onrender.com/userData", {
+        // fetch("https://abdulmalikyinka.onrender.com/userData", {
+        fetch("http://localhost:5000/userData", {
           method: "POST",
           crossDomain: true,
           headers: {
@@ -109,6 +111,10 @@ function Dashboard() {
               <span class='text-center fs-3 ms-3'><i>{userData.email}</i></span><br></br>
               <span class='text-center ms-3'>It's Save o'clock</span><br></br>
               <button onClick={logOut} class='btn btn-danger text-white px-3 py-2 mt-4 d-block m-auto'>Sign Out</button>
+
+              {/* DIRECTING USERS TO EDIT THEIR DETAILS */}
+              {/* <p><FontAwesomeIcon icon="fa-regular fa-pen-to-square" onClick={()=>navigate("/updatedetails", {state:userData})} /></p> */}
+              <p className='f-2 ms-2' onClick={()=>navigate('/updatepassword', {state:userData})}>✏🖍</p>
             </div>
 
             <div className='row mt-5 pt-3 mb-5'>

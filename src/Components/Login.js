@@ -82,6 +82,7 @@ function Login() {
             <button disabled={isSubmitting} type='submit' className="btn btn-info d-block m-auto px-3 py-2 mt-5 w-75 text-white userLogin fs-5" onClick={handleSubmit}>Login</button>
             
             <p class='text-center mt-1' onClick={()=> navigate('/signup')}>No account yet? Signup</p>
+            <p class='text-center text-danger mt-1' onClick={()=> navigate('/resetpassword')}>Forgot password?</p>
           </div>
         </div>
       ) : ""}

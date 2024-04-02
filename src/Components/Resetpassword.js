@@ -23,8 +23,8 @@ function Resetpassword() {
     console.log(values);
     const email = values.email;
     
-    // fetch("https://abdulmalikyinka.onrender.com/forgot-password", {
-    fetch("http://localhost:5000/forgot-password", {
+    fetch("https://abdulmalikyinka.onrender.com/forgot-password", {
+    // fetch("http://localhost:5000/forgot-password", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -42,6 +42,7 @@ function Resetpassword() {
       console.log(data, "userRegister");
       // alert(data.status)
       setUserLink(data.link)
+      console.log(userLink)
     });
 }
     const {values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit} = useFormik({
@@ -59,6 +60,7 @@ function Resetpassword() {
         <div class='mt-5'>
           <span className='toplogo'><img class="logo mt-3 me-1" src={logo} alt="svg image"/><span class="brandname fw-bold text-white ms-2">saveWyse</span></span>
           <div class='inputCon col-md-8 col-lg-4 d-block m-auto mt-4'>
+            <p className='text-center text-success mt-2 fs-5 fw-bold'>{userLink}</p>
             <h5 class='text-center mt-4 fw-bold fs-4'>Reset your password</h5>
             <p class='text-center'>Securely login to your piggyvest</p>
             <p class='ms-5'>Email</p>
@@ -69,7 +71,6 @@ function Resetpassword() {
 
             <button disabled={isSubmitting} type='submit' className="btn btn-info d-block m-auto px-3 py-2 mt-5 w-75 text-white userLogin fs-5" onClick={handleSubmit}>Enter</button>
 
-            {userLink}
             
             <p class='text-center mt-1' onClick={()=> navigate('/signup')}>No account yet? Signup</p>
           </div>

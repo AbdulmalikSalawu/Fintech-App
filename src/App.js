@@ -10,6 +10,7 @@ import Nomatch from "./Components/Nomatch";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Dashboard from "./Components/Dashboard";
+import Updatedetails from "./Components/Updatedetails";
 import { useSelector } from "react-redux";
 // import Forgotpassword from "./Components/Forgotpassword";
 import Resetpassword from "./Components/Resetpassword";
@@ -30,6 +31,7 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/dashboard' element={<Dashboard />}></Route>
+        <Route path='/updatepassword' element={<Updatedetails />}></Route>
         <Route path='/resetpassword' element={<Resetpassword />}></Route>
         <Route path='/adminpage' element={<Adminpage />}></Route>
         <Route path='*' element={<Nomatch />}></Route>

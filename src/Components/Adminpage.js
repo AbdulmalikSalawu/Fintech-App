@@ -4,7 +4,8 @@ function Adminpage() {
 
     const [data, setData] = useState([])
     useEffect(()=> {
-        fetch("http://localhost:5000/allUsers", {
+        fetch("https://abdulmalikyinka.onrender.com/allUsers", {
+        // fetch("http://localhost:5000/allUsers", {
         method: "GET",})
         .then((res) => res.json())
         .then((data) => {
@@ -20,7 +21,7 @@ function Adminpage() {
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Phone Number</th>
+                <th scope="col">Phone Number</th>int
             </tr>
             {data.map(i=>{
                 return(
