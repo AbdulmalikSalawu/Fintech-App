@@ -36,8 +36,8 @@ function Dashboard() {
 
       //FETCH method
       useEffect(() => {
-        // fetch("https://abdulmalikyinka.onrender.com/userData", {
-        fetch("http://localhost:5000/userData", {
+        fetch("https://abdulmalikyinka.onrender.com/userData", {
+        // fetch("http://localhost:5000/userData", {
           method: "POST",
           crossDomain: true,
           headers: {

@@ -27,7 +27,8 @@ function Updatedetails() {
   }, [])
 
     const updateData = () => {
-        fetch("http://localhost:5000/updatedetails", {
+      fetch("https://abdulmalikyinka.onrender.com/userData", {
+        // fetch("http://localhost:5000/updatedetails", {
             method: "POST",
             crossDomain: true,
             headers: {
