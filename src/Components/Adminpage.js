@@ -16,7 +16,8 @@ function Adminpage() {
     }, [])
 
     const getAllUsers = () => {
-        fetch("http://localhost:5000/allUsers", {
+        // fetch("http://localhost:5000/allUsers", {
+            fetch("https://abdulmalikyinka.onrender.com/allUsers", {
         method: "GET",})
         .then((res) => res.json())
         .then((data) => {
@@ -27,8 +28,8 @@ function Adminpage() {
 
     const deleteUser = (paramId,paramName) => {
         if(window.confirm(`are you deleting ${paramName}`)){
-            // fetch("https://abdulmalikyinka.onrender.com/deleteUser", {
-                fetch("http://localhost:5000/deleteUser", {
+            fetch("https://abdulmalikyinka.onrender.com/deleteUser", {
+                // fetch("http://localhost:5000/deleteUser", {
                   method: "POST",
                   crossDomain: true,
                   headers: {
@@ -52,20 +53,23 @@ function Adminpage() {
 
   return (
     <div>
-        <h1>Welcome Admin</h1>
-        <table class='table table-bordered mt-5'>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Delete</th>
-                {/* <th scope="col">S/N</th> */}
-            </tr>
+        <h1 className='mt-5 pt-5 text-center'>List of all Students📕</h1>
+        <table class='table table-striped mt-3 d-block m-auto'>
+            <thead class="thead-dark bg-dark text-white">
+                <tr>
+                    <th class="col-4 text-center fs-5" scope="co">S/N</th>
+                    <th class="col-4 text-center fs-5" scope="co">NAME</th>
+                    <th class="col-4 text-center fs-5" scope="co">EMAIL</th>
+                    <th class="col-4 text-center fs-5" scope="co">DELETE</th>
+                </tr>
+            </thead>
             {data.map(i=>{
                 return(
                     <tr key={i._id}>
-                        <td key={i.firstname}>{i.firstname}</td>
-                        <td key={i.email}>{i.email}</td>
-                        <td key={i._id} onClick={() => deleteUser(i._id,i.firstname)}>🗑</td>
+                        <td class="text-center fs-4" key={i._id}>{i.id}</td>
+                        <td class="text-center fs-5" key={i.firstname}>{i.firstname}</td>
+                        <td class="text-center fs-5" key={i.email}><i>{i.email}</i></td>
+                        <td class="text-center fs-4" key={i._id} onClick={() => deleteUser(i._id,i.firstname)}>🗑</td>
                         {/* <td>{i._id}</td> */}
                         {/* <td>{i.phoneNumber}</td> */}
                     </tr>
