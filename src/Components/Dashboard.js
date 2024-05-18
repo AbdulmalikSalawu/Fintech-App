@@ -10,7 +10,10 @@ import axios from 'axios';
 import headset from '../Assets/headset.svg';
 import scan from '../Assets/upc-scan.svg';
 import bell from '../Assets/bell.svg';
-import eye from '../Assets/eye.svg';
+import eye from '../Assets/eye.svg'
+import person from '../Assets/file-person-fill.svg';
+import bank from '../Assets/bank2.svg';
+import arrow from '../Assets/arrow-up-right-circle.svg'
 
 function Dashboard() {
   const dispatch = useDispatch()
@@ -124,8 +127,10 @@ function Dashboard() {
             </div>
           </div>
 
-          <div class='section3'>
-
+          <div class='section3 mt-5 pt-3'>
+            <img class="person" src = {person} alt="scan" />
+            <img class="bank" src = {bank} alt="scan" />
+            <img class="arrow me-3" src = {arrow} alt="scan" />
           </div>
 
           <div class='sideNav d-none d-lg-block'>
@@ -143,7 +148,8 @@ function Dashboard() {
 
               {/* DIRECTING USERS TO EDIT THEIR DETAILS */}
               {/* <p><FontAwesomeIcon icon="fa-regular fa-pen-to-square" onClick={()=>navigate("/updatedetails", {state:userData})} /></p> */}
-              <p className='f-2 ms-2' onClick={()=>navigate('/updatedetails', {state:userData})}>✏🖍</p>
+              <p className='f-2 ms-2 text-center fw-bold mt-4' onClick={()=>navigate('/updatedetails', {state:userData})}><button class='edit px-3 py-2 text-white'>EDIT details ✏🖍</button></p>
+              {/* <h3>Work in progress...</h3> */}
             </div>
 
             {/* <div className='row mt-5 pt-3 mb-5'>
