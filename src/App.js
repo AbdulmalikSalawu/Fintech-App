@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 // import Forgotpassword from "./Components/Forgotpassword";
 import Resetpassword from "./Components/Resetpassword";
 import Adminpage from "./Components/Adminpage";
+import Checkout from "./Components/Checkout";
 
 function App() {
   const isNavNeeded = useSelector((state) => state.navbar.isNavNeeded)
@@ -34,6 +35,7 @@ function App() {
         <Route path='/updatedetails' element={<Updatedetails />}></Route>
         <Route path='/resetpassword' element={<Resetpassword />}></Route>
         <Route path='/adminpage' element={<Adminpage />}></Route>
+        <Route path='/checkoutpage' element={<Checkout />}></Route>
         <Route path='*' element={<Nomatch />}></Route>
       </Routes>
     </div>

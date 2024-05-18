@@ -3,22 +3,16 @@ import React, {useEffect, useState} from 'react'
 function Adminpage() {
 
     const [data, setData] = useState([])
+    const [searchQuery, setSearchQuery] = useState("")
+    const [click, setClick] = useState(false)
     useEffect(()=> {
-        // fetch("https://abdulmalikyinka.onrender.com/allUsers", {
             getAllUsers()
-        // fetch("http://localhost:5000/allUsers", {
-        // method: "GET",})
-        // .then((res) => res.json())
-        // .then((data) => {
-        //     console.log(data, "allCustomers")
-        //     setData(data.data)
-        // })
-    }, [])
+    }, [searchQuery])
 
     const getAllUsers = () => {
-        // fetch("http://localhost:5000/allUsers", {
-            fetch("https://abdulmalikyinka.onrender.com/allUsers", {
-        method: "GET",})
+        fetch(`https://abdulmalikyinka.onrender.com/allUsers?search=${searchQuery}`, {
+            method: "GET",
+        })
         .then((res) => res.json())
         .then((data) => {
             console.log(data, "allCustomers")
@@ -26,6 +20,15 @@ function Adminpage() {
         })
     }
 
+    // const inputClicked = () => {
+    //    setSearchQuery("yes click")
+    // }
+
+    // if(click){
+    //     setSearchQuery("yes click")
+    // } else {setSearchQuery("no click")}
+
+ 
     const deleteUser = (paramId,paramName) => {
         if(window.confirm(`are you deleting ${paramName}`)){
             fetch("https://abdulmalikyinka.onrender.com/deleteUser", {
@@ -35,7 +38,7 @@ function Adminpage() {
                   headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
-                    "Access-Control-Allow-Origin": "*",
+                    // "Access-Control-Allow-Origin": "*",
                   },
                   body: JSON.stringify({
                     uniqueid:paramId,
@@ -51,10 +54,36 @@ function Adminpage() {
         }
     }
 
+    const handleSearch = (e) => [
+        setSearchQuery(e.target.value)
+    ]
+
   return (
     <div>
         <h1 className='mt-5 pt-5 text-center'>List of all Students📕</h1>
+
+
         <table class='table table-striped mt-3 d-block m-auto'>
+            <input type='text' id='myInput' placeholder='search...' onChange={handleSearch}
+                style={{
+                    padding: "8px 22px 8px 22px",
+                    borderRadius: "5px",
+                    border: "1px solid #ccc",
+                    width: "50px",
+                    boxSizing: "border-box",
+                    marginBottom: "1rem"
+                }}
+            />
+            <span
+                style={{
+                    position: "absolute",
+                    right: "10", top: "8", 
+                    color: "black",
+                    fontSize: "2rem"
+                }}>
+                    Total:{data.length}
+                </span>
+
             <thead class="thead-dark bg-dark text-white">
                 <tr>
                     <th class="col-4 text-center fs-5" scope="co">S/N</th>

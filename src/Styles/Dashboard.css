@@ -1,12 +1,54 @@
+/* background-color: #0c1825 !important; */
+.section1{
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    border-radius: 50%;
+    height: 3rem;
+    width: 1.5rem;
+}
+.allIcon{
+    height: 2rem;
+    width: 2rem;
+}
+.section2{
+    height:8rem;
+    width: 95%;
+    background-color: #0c1823;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+}
+.balancemenu{
+    display: flex;
+    gap: 1.8rem;
+}
+.balancemenu2{
+    display: flex;
+    gap: 7.4rem;
+}
+.eye{
+    height: 1rem;
+    width: 1rem;
+    position: relative;
+    right: 1.7rem;
+    bottom: 0.3rem;
+}
+.addMoney{
+    color: #0c1823;
+    border: 0;
+}
+
 .sideNav{
     height: 100vh;
     min-width: 21% !important;
     background-color: rgb(12, 12, 56);
 }
-.dflex{
+/* .dflex{
     display: flex;
     flex-direction: row;
-}
+} */
 input{
     border-radius: 5px;
 }
@@ -37,11 +79,19 @@ i{
 .card2{background-color: purple;}
 .card3{background-color: rgb(26, 25, 25);}
 @media screen and (max-width:800px){
-    .mainDiv{
+    /* .mainDiv{
         display: block;
-    }
+    } */
     .profilePic{
         height: 5.5rem !important;
         width: 6rem !important;
+    }
+}
+@media screen and (max-width:400px) {
+    .balancemenu{
+        gap: 0.7rem;
+    }
+    .balancemenu2{
+        gap: 5.8rem;
     }
 }

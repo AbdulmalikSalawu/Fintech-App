@@ -27,14 +27,13 @@ function Updatedetails() {
   }, [])
 
     const updateData = () => {
-      fetch("https://abdulmalikyinka.onrender.com/userData", {
+      fetch("https://abdulmalikyinka.onrender.com/updatedetails", {
         // fetch("http://localhost:5000/updatedetails", {
             method: "POST",
             crossDomain: true,
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
-              "Access-Control-Allow-Origin": "*",
             },
             body: JSON.stringify({
               id:location.state._id,

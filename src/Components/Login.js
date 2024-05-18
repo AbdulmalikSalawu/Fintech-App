@@ -30,7 +30,6 @@ function Login() {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        "Access-Control-Alow-Origin": "*"
       },
       body: JSON.stringify({
         email,
