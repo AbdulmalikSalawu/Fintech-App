@@ -11,6 +11,7 @@ import headset from '../Assets/headset.svg';
 import scan from '../Assets/upc-scan.svg';
 import bell from '../Assets/bell.svg';
 import eye from '../Assets/eye.svg'
+import eyeslash from '../Assets/eye-slash.svg'
 import person from '../Assets/file-person-fill.svg';
 import bank from '../Assets/bank2.svg';
 import arrow from '../Assets/arrow-up-right-circle.svg'
@@ -32,6 +33,7 @@ function Dashboard() {
   const [userData,setUserData] = useState("")
   const [file, setFile] = useState("")
   const showNav = useSelector((state) => state.navbar.show)
+  const [showBalance, setShowBalance] = useState(false)
     
       //AXIOS method
         // const url = "http://localhost:5000/userData";
@@ -103,6 +105,10 @@ function Dashboard() {
             console.log(error)
         })
       }
+      const handleToggle = () => {
+        setShowBalance(prevShowBalance => !prevShowBalance);
+      };
+    
 
   return (
     <div>
@@ -122,14 +128,21 @@ function Dashboard() {
             <div class='balancemenu'>
               <div>
                 <small class='smallfont'>Available Balance</small>
-                <span><img class='eye' src={eye} /></span>
+                <span>
+                  <button class='border-0 toggle' onClick={handleToggle}>
+                    {showBalance ? <img class='eye' src={eyeslash} /> : <img class='eye' src={eye} />}
+                  </button>
+                </span>
               </div>
               <div>
                 <small class='ms-4 smallfont'>Transaction History</small>
               </div>
             </div>
             <div class='balancemenu2'>
-              <p class='mt-3 fs-3 bal'>4,876.31</p>
+            <p class='mt-3 fs-3 bal'>
+              {showBalance ? ("8674.09") : ("****")}
+            </p>
+            
               <button class='addMoney px-3 py-2 rounded-pill fw-bold'><small>+ Add Money</small></button>
             </div>
           </div>
@@ -169,7 +182,7 @@ function Dashboard() {
 
             <div>
               <img class="sec4icons" src = {piggy} alt="scan" /><br />
-              <small class='ms-4 smallfont'>To SPay</small>
+              <small class='ms-4 smallfont'>Save</small>
             </div>
             <div>
               <img class="sec4icons" src = {bank} alt="scan" /><br />

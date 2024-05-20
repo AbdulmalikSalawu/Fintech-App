@@ -28,6 +28,9 @@
     display: flex;
     gap: 7.4rem;
 }
+.toggle{
+    background-color: #0c1825 !important;
+}
 .eye{
     height: 1rem;
     width: 1rem;
