@@ -14,6 +14,13 @@ import eye from '../Assets/eye.svg'
 import person from '../Assets/file-person-fill.svg';
 import bank from '../Assets/bank2.svg';
 import arrow from '../Assets/arrow-up-right-circle.svg'
+import wifi from '../Assets/wifi.svg'
+import gaming from '../Assets/controller.svg'
+import tv from '../Assets/tv.svg'
+import piggy from '../Assets/piggy-bank-fill.svg'
+// import loan from '../Assets/piggyIcon.svg'
+import health from '../Assets/hospital.svg'
+import more from '../Assets/three-dots.svg'
 
 function Dashboard() {
   const dispatch = useDispatch()
@@ -105,7 +112,7 @@ function Dashboard() {
 
           <div class='section1 pt-2'>
             <img class="d-block m-auto logo ms-2" src = {userData.newImage} alt="profile pic" />
-            <span class='text-center fs-3  mt-2'><i>Hi, {userData.firstname}</i></span>
+            <span class='text-center fs-4  mt-2'><i>Hi, {userData.firstname}</i></span>
             <img class="allIcon" src = {headset} alt="headset" />
             <img class="allIcon" src = {scan} alt="scan" />
             <img class="allIcon me-2" src = {bell} alt="bell" />
@@ -114,31 +121,76 @@ function Dashboard() {
           <div class='section2 d-block m-auto mt-4 text-white'>
             <div class='balancemenu'>
               <div>
-                <small>Available Balance</small>
+                <small class='smallfont'>Available Balance</small>
                 <span><img class='eye' src={eye} /></span>
               </div>
               <div>
-                <small class='ms-4'>Transaction History</small>
+                <small class='ms-4 smallfont'>Transaction History</small>
               </div>
             </div>
             <div class='balancemenu2'>
-              <p class='mt-3 fs-3'>8,627.05</p>
+              <p class='mt-3 fs-3 bal'>4,876.31</p>
               <button class='addMoney px-3 py-2 rounded-pill fw-bold'><small>+ Add Money</small></button>
             </div>
           </div>
 
-          <div class='section3 mt-5 pt-3'>
-            <img class="person" src = {person} alt="scan" />
-            <img class="bank" src = {bank} alt="scan" />
-            <img class="arrow me-3" src = {arrow} alt="scan" />
+          <div class='section3 mt-3 pt-2 pb-2'>
+            <div>
+              <img class="person" src = {person} alt="scan" /><br />
+              <small class='ms-4 smallfont'>To SPay</small>
+            </div>
+            <div>
+              <img class="bank" src = {bank} alt="scan" /><br />
+              <small class='ms-4 smallfont'>To Bank</small>
+            </div>
+            <div>
+              <img class="arrow me-3" src = {arrow} alt="scan" /><br />
+              <small class='ms-4 smallfont'>Withdraw</small>
+            </div>
           </div>
 
-          <div class='sideNav d-none d-lg-block'>
+          <div class='section4 mt-3 pt-2 pb-2'>
+            <div>
+              <img class="sec4icons" src = {wifi} alt="scan" /><br />
+              <small class='ms-4 smallfont'>Airtime</small>
+            </div>
+            <div>
+              <img class="sec4icons" src = {bank} alt="scan" /><br />
+              <small class='ms-4 smallfont'>Data</small>
+            </div>
+            <div>
+              <img class="sec4icons me-3" src = {gaming} alt="scan" /><br />
+              <small class='ms-4 smallfont'>Betting</small>
+            </div>
+            <div>
+              <img class="sec4icons me-3" src = {tv} alt="scan" /><br />
+              <small class='ms-4 smallfont'>TV</small>
+            </div>
+
+            <div>
+              <img class="sec4icons" src = {piggy} alt="scan" /><br />
+              <small class='ms-4 smallfont'>To SPay</small>
+            </div>
+            <div>
+              <img class="sec4icons" src = {bank} alt="scan" /><br />
+              <small class='ms-4 smallfont text-center'>Loan</small>
+            </div>
+            <div>
+              <img class="sec4icons me-3" src = {health} alt="scan" /><br />
+              <small class='ms-4 smallfont'>Health</small>
+            </div>
+            <div>
+              <img class="sec4icons me-3" src = {more} alt="scan" /><br />
+              <small class='ms-4 smallfont'>More</small>
+            </div>
+          </div>
+
+          {/* <div class='sideNav d-none d-lg-block'>
             <button className='nav-btn nav-open-btn px-3 py-1 mt-3'>
               <FaBars />
             </button>
             <img className='d-block m-auto' src={whiteLogo} alt="svg image"/>
-          </div>
+          </div> */}
 
           <div class='content ms-lg-5 mt-5'>
             <div>
