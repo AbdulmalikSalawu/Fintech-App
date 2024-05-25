@@ -22,6 +22,7 @@ import piggy from '../Assets/piggy-bank-fill.svg'
 // import loan from '../Assets/piggyIcon.svg'
 import health from '../Assets/hospital.svg'
 import more from '../Assets/three-dots.svg'
+// import { paywithpaystack } from '../../../SERVER/controllers/usersController';
 
 function Dashboard() {
   const dispatch = useDispatch()
@@ -34,7 +35,7 @@ function Dashboard() {
   const [file, setFile] = useState("")
   const showNav = useSelector((state) => state.navbar.show)
   const [showBalance, setShowBalance] = useState(false)
-    
+  const [email, setEmail] = useState("")
       //AXIOS method
         // const url = "http://localhost:5000/userData";
         // // JSON.stringify({
@@ -68,6 +69,7 @@ function Dashboard() {
         .then((data)=> {
             console.log(data, "userData")
             setUserData(data.data)
+            setEmail(data.data.email)
             if (data.data=="token expired") {
               alert("session expired, login again");
               localStorage.clear();
@@ -108,7 +110,17 @@ function Dashboard() {
       const handleToggle = () => {
         setShowBalance(prevShowBalance => !prevShowBalance);
       };
-    
+
+      const paywithpaystack = () => {
+          const totalCost = 90000
+          axios.post(`http://localhost:5000/paywithpaystack`,{totalCost,email})
+          // axios.post(`https://abdulmalikyinka.onrender.com/paywithpaystack`,{totalCost,email})
+          .then((res)=>{
+                let data = res.data
+                window.location.href=data.data.authorization_url
+                //CLEAR THE CART PAGE HERE !!
+          })
+      }
 
   return (
     <div>
@@ -117,12 +129,13 @@ function Dashboard() {
         <div class='dflex mainDiv'>
 
           <div class='section1 pt-2'>
-            <img class="d-block m-auto logo ms-2" src = {userData.newImage} alt="profile pic" />
+            <img onClick={()=>navigate('/updatedetails', {state:userData})} class="d-block m-auto logo ms-2" src = {userData.newImage} alt="profile pic" />
             <span class='text-center fs-4  mt-2'><i>Hi, {userData.firstname}</i></span>
             <img class="allIcon" src = {headset} alt="headset" />
             <img class="allIcon" src = {scan} alt="scan" />
             <img class="allIcon me-2" src = {bell} alt="bell" />
           </div>
+          <p class='ms-2'>Acc no: {userData.phoneNumber}</p>
 
           <div class='section2 d-block m-auto mt-4 text-white'>
             <div class='balancemenu'>
@@ -143,7 +156,7 @@ function Dashboard() {
               {showBalance ? ("8674.09") : ("****")}
             </p>
             
-              <button class='addMoney px-3 py-2 rounded-pill fw-bold'><small>+ Add Money</small></button>
+              <button onClick={paywithpaystack} class='addMoney px-3 py-2 rounded-pill fw-bold'><small>+ Add Money</small></button>
             </div>
           </div>
 

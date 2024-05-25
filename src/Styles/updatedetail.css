@@ -1,0 +1,17 @@
+.editDetail{
+   background-color: #0c1825 !important;
+   border: none !important;
+   color: white !important;
+}
+.inputBox{
+    background-color: #0c1825;
+    height: 25rem;
+    width: 97%;
+    border-radius: 1rem;
+    padding: 2rem 2rem 2rem 2rem;
+}
+img{
+    height: 3rem;
+    width: 3.2rem;
+    border-radius: 50%;
+}

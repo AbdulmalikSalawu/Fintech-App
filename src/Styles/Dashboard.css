@@ -120,6 +120,8 @@ i{
 .card1{background-color: blue;}
 .card2{background-color: purple;}
 .card3{background-color: rgb(26, 25, 25);}
+.editdetail{background-color: red !important;}
+
 @media screen and (max-width:800px){
     /* .mainDiv{
         display: block;

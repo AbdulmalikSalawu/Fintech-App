@@ -3,7 +3,7 @@ import { FaBars} from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router'
 import { navNotNeeded } from '../Features/navSlice'
-import '../Styles/Dashboard.css'
+import '../Styles/updatedetail.css'
 import whiteLogo from '../Assets/whiteLogo.svg';
 import axios from 'axios';
 
@@ -11,6 +11,7 @@ function Updatedetails() {
     const [firstname, setFirstName] = useState("")
     const [lastname, setLastName] = useState("")
     const [email, setEmail] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(navNotNeeded())
@@ -24,6 +25,7 @@ function Updatedetails() {
         setFirstName(location.state.firstname)
         setLastName(location.state.lastname)
         setEmail(location.state.email)
+        setPhoneNumber(location.state.phoneNumber)
   }, [])
 
     const updateData = () => {
@@ -51,18 +53,24 @@ function Updatedetails() {
 
   return (
     <div>
-        <h1 className='text-center mt-3'>Edit your details</h1>
+        <h4 className='text-center mt-3'>{firstname}, Welcome to your Profile</h4>
 
-        <input type="text" className="form-control w-75 d-block m-auto mt-4 text-center py-2"
-        defaultValue={firstname} 
+      <div class='inputBox d-block m-auto mt-4'>
+        <img className='d-block m-auto' src={location.state.newImage} />
+        <i className='text-center d-block m-auto text-white fs-3'>Click each detail to update it 🖍</i>
+        <input type="text" className="form-control w-75 d-block m-auto mt-5 text-center py-2 editDetail"
+        defaultValue={firstname}
         onChange={(e)=>setFirstName(e.target.value)} />
-        <input type="text" className="form-control w-75 d-block m-auto mt-2 text-center py-2"
+        
+        <input type="text" className="form-control w-75 d-block m-auto mt-3 text-center py-2 editDetail"
         defaultValue={lastname}
         onChange={(e)=>setLastName(e.target.value)} />
 
-        <input type="text" placeholder="firstname" className="form-control w-75 d-block m-auto mt-2 text-center py-2" disabled defaultValue={email} />
+        <input type="text" placeholder="firstname" className="form-control w-75 d-block m-auto mt-3 text-center py-2 editDetail" disabled defaultValue={email} />
+        <p className='mt-3 d-block m-auto mt-4 text-center text-white'>0{phoneNumber}</p>
+      </div>
 
-        <button onClick={updateData} className='btn btn-info px-2 d-block m-auto mt-3'>Update details</button>
+        <button onClick={updateData} className='btn btn-info px-2 d-block m-auto mt-3'>Update details 🖍</button>
 
     </div>
   )
