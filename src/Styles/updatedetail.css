@@ -5,7 +5,7 @@
 }
 .inputBox{
     background-color: #0c1825;
-    height: 25rem;
+    height: 26rem;
     width: 97%;
     border-radius: 1rem;
     padding: 2rem 2rem 2rem 2rem;
@@ -14,4 +14,25 @@ img{
     height: 3rem;
     width: 3.2rem;
     border-radius: 50%;
+}
+.imgcont{
+    display: flex;
+    gap: 0 !important;
+}
+.selectPic{
+    height: 1.8rem;
+    width: 3.8rem;
+    border: 0 !important;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
+    color: #0c1825;
+    position: relative;
+    right: 6.6rem;
+    top:0.5rem;
+}
+.update{
+    background-color: #eaeef3;
+    color: black;
+    border: thin solid #0c1825 !important;
 }

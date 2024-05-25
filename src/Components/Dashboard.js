@@ -53,8 +53,8 @@ function Dashboard() {
 
       //FETCH method
       useEffect(() => {
-        // fetch("https://abdulmalikyinka.onrender.com/userData", {
-        fetch("http://localhost:5000/userData", {
+        fetch("https://abdulmalikyinka.onrender.com/userData", {
+        // fetch("http://localhost:5000/userData", {
           method: "POST",
           crossDomain: true,
           headers: {
@@ -89,8 +89,8 @@ function Dashboard() {
 
       const paywithpaystack = () => {
           const totalCost = 90000
-          axios.post(`http://localhost:5000/paywithpaystack`,{totalCost,email})
-          // axios.post(`https://abdulmalikyinka.onrender.com/paywithpaystack`,{totalCost,email})
+          // axios.post(`http://localhost:5000/paywithpaystack`,{totalCost,email})
+          axios.post(`https://abdulmalikyinka.onrender.com/paywithpaystack`,{totalCost,email})
           .then((res)=>{
                 let data = res.data
                 window.location.href=data.data.authorization_url
