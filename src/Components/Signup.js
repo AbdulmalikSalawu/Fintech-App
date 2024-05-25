@@ -69,8 +69,8 @@ function Signup() {
       const password = values.password;
       // new Promise((resolve) => setTimeout(resolve, 1000))
       setMessage("creating account...")
-      // const url = "https://abdulmalikyinka.onrender.com/signup"
-      const url = "http://localhost:5000/signup"
+      // const url = "http://localhost:5000/signup"
+      const url = "https://abdulmalikyinka.onrender.com/signup"
       try {
         await axios.post(url,{firstname,lastname,phoneNumber,email,password,newImage}).then((response)=>{
             console.log(response.data)

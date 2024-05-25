@@ -53,8 +53,8 @@ function Dashboard() {
 
       //FETCH method
       useEffect(() => {
-        fetch("https://abdulmalikyinka.onrender.com/userData", {
-        // fetch("http://localhost:5000/userData", {
+        // fetch("https://abdulmalikyinka.onrender.com/userData", {
+        fetch("http://localhost:5000/userData", {
           method: "POST",
           crossDomain: true,
           headers: {
@@ -83,30 +83,6 @@ function Dashboard() {
         navigate('/login')
       }
 
-      //Converting images to base 64
-      const [newImage, setNewImage] = useState("")
-      const getFile = (e)=>{
-        const myFile = e.target.files[0]
-        const reader = new FileReader()
-        reader.readAsDataURL(myFile);
-        reader.onload = ()=>{
-          setFile(reader.result)
-        }
-      }
-
-      //Uploading images to the cloudinary/POST request
-      const upload = ()=>{
-        const url = "https://abdulmalikyinka.onrender.com/saveFile"
-        const userData = {file}
-        axios.post(url,userData).then((response)=>{
-          alert(response.data.message)
-          setNewImage(response.data.image)
-        })
-        
-        .catch((error)=>{
-            console.log(error)
-        })
-      }
       const handleToggle = () => {
         setShowBalance(prevShowBalance => !prevShowBalance);
       };
@@ -118,7 +94,6 @@ function Dashboard() {
           .then((res)=>{
                 let data = res.data
                 window.location.href=data.data.authorization_url
-                //CLEAR THE CART PAGE HERE !!
           })
       }
 

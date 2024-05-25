@@ -28,9 +28,43 @@ function Updatedetails() {
         setPhoneNumber(location.state.phoneNumber)
   }, [])
 
+
+
+      //Converting images to base 64
+    const [newImage, setNewImage] = useState("")
+    const [file, setFile] = useState("")
+    const [uploadStatus, setUploadStatus] = useState("")
+    const getFile = (e)=>{
+    const myFile = e.target.files[0]
+    const reader = new FileReader()
+    reader.readAsDataURL(myFile);
+    reader.onload = ()=>{
+      setFile(reader.result)
+    }
+  }
+  //Uploading images to the cloudinary/POST request
+   const upload = ()=>{
+     if(file == ""){
+      setUploadStatus("(🤳 select an image)")
+     } else {
+      setUploadStatus("(uploading)")
+     }
+    // const url = "https://abdulmalikyinka.onrender.com/saveFile"
+    const url = "http://localhost:5000/saveFile"
+    const userData = {file}
+    axios.post(url,userData).then((response)=>{
+      setNewImage(response.data.image)
+      setUploadStatus("(image added ✔)")
+     })
+     .catch((error)=>{
+        console.log(error)
+     })
+   }
+
+
     const updateData = () => {
-      fetch("https://abdulmalikyinka.onrender.com/updatedetails", {
-        // fetch("http://localhost:5000/updatedetails", {
+      // fetch("https://abdulmalikyinka.onrender.com/updatedetails", {
+        fetch("http://localhost:5000/updatedetails", {
             method: "POST",
             crossDomain: true,
             headers: {
@@ -40,7 +74,8 @@ function Updatedetails() {
             body: JSON.stringify({
               id:location.state._id,
               nameone:firstname,
-              nametwo:lastname
+              nametwo:lastname,
+              imagenew:newImage
             }),
           })
           .then((res)=>res.json())
@@ -54,6 +89,10 @@ function Updatedetails() {
   return (
     <div>
         <h4 className='text-center mt-3'>{firstname}, Welcome to your Profile</h4>
+
+        <input type="file" class="form-control w-75 d-block m-auto mt-4 text-center py-2" onChange={(e)=>getFile(e)}/><br />
+        <button className="btn btn-info px-2 d-block m-auto upload" onClick={upload}>Upload {uploadStatus}</button>
+
 
       <div class='inputBox d-block m-auto mt-4'>
         <img className='d-block m-auto' src={location.state.newImage} />
